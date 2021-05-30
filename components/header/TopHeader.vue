@@ -3,42 +3,58 @@
     <div class="left">
       <div class="item">
         <font-awesome-icon icon="phone-alt" class="icon"></font-awesome-icon>
-        <p>+0123 456 789</p>
+        <p>{{ tel }}</p>
       </div>
       <div class="line"></div>
       <div class="item">
         <font-awesome-icon icon="envelope" class="icon"></font-awesome-icon>
-        <p>info@GlobalBusiness.com</p>
+        <p>{{ email }}</p>
       </div>
     </div>
     <div class="right">
-      <div class="item">
+      <nuxt-link to="/signin" class="item">
         <font-awesome-icon icon="lock" class="icon"></font-awesome-icon>
         <p>login</p>
-      </div>
+      </nuxt-link>
       <div class="line"></div>
-      <div class="item">
+      <nuxt-link to="/signup" class="item">
         <font-awesome-icon icon="user" class="icon"></font-awesome-icon>
         <p>register</p>
-      </div>
+      </nuxt-link>
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  computed: {
+    tel() {
+      return this.$store.getters.tel
+    },
+    email() {
+      return this.$store.getters.email
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
+@import '~/assets/styles/colors.scss';
+@import '~/assets/styles/variables.scss';
 .topHeader {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1em 15%;
+  padding: 1em $header_padding;
   align-items: center;
   //   .left {
   //   }
   .right {
     .line {
       transform: rotate(25deg);
+    }
+    .item {
+      p {
+        text-transform: capitalize;
+      }
     }
   }
   .left,
@@ -48,20 +64,24 @@ export default {}
     .item {
       display: flex;
       align-items: center;
-      color: red;
+      color: white;
       margin: 0 1.5em;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $primaryColor;
+      }
       .icon {
-        font-size: 1.2em;
+        font-size: $fontM;
       }
       p {
-        font-size: 1.5em;
+        font-size: $fontM;
         margin-left: 0.5em;
       }
     }
     .line {
       width: 0.1em;
       height: 2em;
-      background-color: red;
+      background-color: white;
     }
   }
 }
