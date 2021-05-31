@@ -14,19 +14,19 @@ export default {
         {
           title: 'Ipsum is simply dummy text simply dummy.',
           date: 'Nov 10, 2016',
-          imgSrc: 'imgs/01.jpg',
+          imgSrc: 'imgs/blog/01.jpg',
           link: '/',
         },
         {
           title: 'Simply dummy text of the printing ipsum is simply.',
           date: 'Nov 10, 2016',
-          imgSrc: 'imgs/02.jpg',
+          imgSrc: 'imgs/blog/02.jpg',
           link: '/',
         },
         {
           title: 'Simply dummy text of the printing ipsum is simply.',
           date: 'Nov 10, 2016',
-          imgSrc: 'imgs/03.jpg',
+          imgSrc: 'imgs/blog/03.jpg',
           link: '/',
         },
       ],

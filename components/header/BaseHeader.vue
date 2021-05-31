@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="imgs/header-bg.jpg" alt="imgs/header-bg.jpg" class="bg" />
+    <img src="imgs/bg/bg-2.jpg" alt="imgs/header-bg.jpg" class="bg" />
     <div class="filter"></div>
     <div class="content">
       <div class="topHeader">
