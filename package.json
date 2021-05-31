@@ -17,10 +17,12 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@glidejs/glide": "^3.4.1",
     "@nuxtjs/axios": "^5.13.1",
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
+    "particles.js": "^2.0.0",
     "vee-validate": "^4.4.2"
   },
   "devDependencies": {

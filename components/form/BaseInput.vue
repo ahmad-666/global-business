@@ -97,6 +97,7 @@ export default {
 }
 .whiteBg {
   background-color: white;
+  border: 1px solid lighten(grey, 20%);
   input {
     color: lighten(black, 30%);
     background-color: inherit;
@@ -109,7 +110,7 @@ export default {
   width: 100%;
   input {
     width: 100%;
-    padding: 1em;
+    padding: 0.75em;
     font-size: 1em;
   }
 }

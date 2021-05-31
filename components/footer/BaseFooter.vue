@@ -36,6 +36,8 @@ footer {
   background-color: $footer_bg;
   padding: 8em $footer_padding;
   display: flex;
+  justify-content: center;
+  align-items: center;
   .infosContainer,
   .postsContainer,
   .linksContainer,

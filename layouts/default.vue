@@ -6,6 +6,7 @@
       :bread-crumb-layers="breadCrumbLayers"
     ></base-header>
     <Nuxt />
+    <particle-container></particle-container>
     <base-footer></base-footer>
     <footer-bottom></footer-bottom>
   </div>
@@ -14,12 +15,13 @@
 import BaseHeader from '~/components/header/BaseHeader.vue'
 import BaseFooter from '~/components/footer/BaseFooter.vue'
 import FooterBottom from '~/components/footer/FooterBottom.vue'
-
+import ParticleContainer from '~/components/ParticleContainer.vue'
 export default {
   components: {
     BaseHeader,
     BaseFooter,
     FooterBottom,
+    ParticleContainer,
   },
   computed: {
     title() {

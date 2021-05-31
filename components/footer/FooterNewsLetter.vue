@@ -35,13 +35,7 @@
   </div>
 </template>
 <script>
-import BaseInput from '~/components/form/BaseInput.vue'
-import ErrorMessage from '~/components/form/ErrorMessage.vue'
 export default {
-  components: {
-    BaseInput,
-    ErrorMessage,
-  },
   data() {
     return {
       emailErrorMsg: '',

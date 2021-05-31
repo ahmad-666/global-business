@@ -25,12 +25,10 @@
 <script>
 import NavBar from '~/components/header/NavBar.vue'
 import TopHeader from '~/components/header/TopHeader.vue'
-import BaseBreadCrumb from '~/components/ui/BaseBreadCrumb.vue'
 export default {
   components: {
     NavBar,
     TopHeader,
-    BaseBreadCrumb,
   },
   props: {
     title: {
