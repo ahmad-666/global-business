@@ -37,6 +37,9 @@ export default {
         case fullPath.includes('faqs'):
           title = 'FAQS'
           break
+        case fullPath.includes('contact'):
+          title = 'CONTACT US'
+          break
       }
       return title
     },
@@ -53,6 +56,10 @@ export default {
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
         case fullPath.includes('faqs'):
+          subTitle =
+            'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          break
+        case fullPath.includes('contact'):
           subTitle =
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
@@ -79,6 +86,12 @@ export default {
           breadCrumbLayers = [
             { name: 'home', route: '/' },
             { name: 'faqs', route: '/faqs', active: true },
+          ]
+          break
+        case fullPath.includes('contact'):
+          breadCrumbLayers = [
+            { name: 'home', route: '/' },
+            { name: 'contact', route: '/contact', active: true },
           ]
           break
       }

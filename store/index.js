@@ -4,7 +4,9 @@ import rootActions from './root/actions'
 export const state = () => {
   return {
     tel: '',
+    telTime: '',
     email: '',
+    emailTime: '',
     address: '',
     socials: [],
     footerPosts: [],

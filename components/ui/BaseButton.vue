@@ -92,10 +92,9 @@ export default {
   background-color: $primaryColor;
   transition: all 0.3s linear;
   &:hover {
-    background-color: white;
-    border: 1px solid $primaryColor;
+    background-color: #151d2e;
     > * {
-      color: $primaryColor !important;
+      color: white !important;
     }
   }
 }

@@ -1,5 +1,5 @@
 export const validateEmail = val => {
-  if (!val.trim().length || !val.includes('@')) return false
+  if (!val || !val.trim().length || !val.includes('@')) return false
   return true
 }
 export const validateFirstName = val => {
@@ -8,5 +8,9 @@ export const validateFirstName = val => {
 }
 export const validateLastName = val => {
   if (!val.trim().length) return false
+  return true
+}
+export const validateRequired = val => {
+  if (!val || !val.trim().length) return false
   return true
 }

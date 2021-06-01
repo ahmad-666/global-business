@@ -1,12 +1,16 @@
 <template>
-  <div class="inputContainer" :class="{ ...typeClass, ...sizeClass }">
-    <input
+  <div
+    :style="{ height }"
+    class="textAreaContainer"
+    :class="{ ...typeClass, ...sizeClass }"
+  >
+    <textarea
       :name="name"
       :placeholder="placeholder"
-      :type="inputType"
       :value="modelValue"
       @input="inputHandler"
-    />
+    >
+    </textarea>
   </div>
 </template>
 <script>
@@ -20,10 +24,6 @@ export default {
       type: String,
       required: true,
     },
-    inputType: {
-      type: String,
-      default: 'text',
-    },
     placeholder: {
       type: String,
       required: true,
@@ -35,6 +35,10 @@ export default {
     modelValue: {
       type: [String, Number],
       required: true,
+    },
+    height: {
+      type: String,
+      default: '20em',
     },
   },
   emits: ['update:modelValue'],
@@ -98,7 +102,7 @@ export default {
 .whiteBg {
   background-color: white;
   border: 1px solid lighten(grey, 20%);
-  input {
+  textarea {
     color: lighten(black, 30%);
     background-color: inherit;
     &::placeholder {
@@ -106,14 +110,14 @@ export default {
     }
   }
 }
-.inputContainer {
+.textAreaContainer {
   width: 100%;
-  border-radius: 0.3em;
-  overflow: hidden;
-  input {
+  textarea {
     width: 100%;
+    height: 100%;
     padding: 0.75em;
     font-size: 1em;
+    resize: none;
   }
 }
 </style>

@@ -8,7 +8,14 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  mounted() {
+    document.body.classList.add('hide-scroll')
+  },
+  destroyed() {
+    document.body.classList.remove('hide-scroll')
+  },
+}
 </script>
 <style lang="scss" scoped>
 @import '~/assets/styles/colors.scss';

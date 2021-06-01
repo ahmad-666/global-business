@@ -68,6 +68,12 @@
           <p class="btnTxt">submit</p>
         </base-button>
       </div>
+      <div class="success">
+        <success-message
+          v-if="successMsg"
+          :success-msg="successMsg"
+        ></success-message>
+      </div>
 
       <base-loader v-if="isLoading"></base-loader>
     </form>
@@ -92,6 +98,7 @@ export default {
       emailErrorMsg: '',
       subjectErrorMsg: '',
       isLoading: false,
+      successMsg: '',
     }
   },
   fetch() {
@@ -123,6 +130,7 @@ export default {
       this.firstNameErrorMsg = ''
       this.lastNameErrorMsg = ''
       this.emailErrorMsg = ''
+      this.successMsg = ''
       if (!validateFirstName(this.firstName)) {
         this.firstNameErrorMsg = 'enter firstname'
         return null
@@ -138,6 +146,7 @@ export default {
       this.isLoading = true
       setTimeout(() => {
         this.isLoading = false
+        this.successMsg = 'successfully sent'
       }, 2000)
     },
   },
@@ -192,6 +201,10 @@ export default {
         color: white;
         font-size: $fontM - 0.2em;
       }
+    }
+    .success {
+      text-align: center;
+      margin-top: 1em;
     }
   }
 }
