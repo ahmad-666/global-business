@@ -34,6 +34,9 @@ export default {
         case fullPath.includes('pricing'):
           title = 'PRICING'
           break
+        case fullPath.includes('faqs'):
+          title = 'FAQS'
+          break
       }
       return title
     },
@@ -46,6 +49,10 @@ export default {
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
         case fullPath.includes('pricing'):
+          subTitle =
+            'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          break
+        case fullPath.includes('faqs'):
           subTitle =
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
@@ -66,6 +73,12 @@ export default {
           breadCrumbLayers = [
             { name: 'home', route: '/' },
             { name: 'pricing', route: '/pricing', active: true },
+          ]
+          break
+        case fullPath.includes('faqs'):
+          breadCrumbLayers = [
+            { name: 'home', route: '/' },
+            { name: 'faqs', route: '/faqs', active: true },
           ]
           break
       }

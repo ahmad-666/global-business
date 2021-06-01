@@ -14,6 +14,8 @@ import {
   faFolder,
   faCopy,
   faStar,
+  faPlus,
+  faMinus,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -38,6 +40,8 @@ library.add(
   faHandPointRight,
   faFolder,
   faCopy,
-  faStar
+  faStar,
+  faPlus,
+  faMinus
 )
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

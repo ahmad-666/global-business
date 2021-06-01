@@ -308,6 +308,7 @@ export default {
   }
   .comments {
     width: 100%;
+    background-color: $section_bg_color;
   }
 }
 </style>
