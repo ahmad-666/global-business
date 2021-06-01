@@ -8,6 +8,12 @@ import {
   faUser,
   faMapMarkerAlt,
   faCalendar,
+  faTimes,
+  faCheck,
+  faHandPointRight,
+  faFolder,
+  faCopy,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -26,6 +32,12 @@ library.add(
   faFacebook,
   faGoogle,
   faGithub,
-  faCalendar
+  faCalendar,
+  faTimes,
+  faCheck,
+  faHandPointRight,
+  faFolder,
+  faCopy,
+  faStar
 )
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

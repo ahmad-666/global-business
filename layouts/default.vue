@@ -31,6 +31,9 @@ export default {
         case fullPath.includes('support'):
           title = 'CUSTOMER SUPPORT'
           break
+        case fullPath.includes('pricing'):
+          title = 'PRICING'
+          break
       }
       return title
     },
@@ -39,6 +42,10 @@ export default {
       const fullPath = this.$route.fullPath
       switch (true) {
         case fullPath.includes('support'):
+          subTitle =
+            'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          break
+        case fullPath.includes('pricing'):
           subTitle =
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
@@ -53,6 +60,12 @@ export default {
           breadCrumbLayers = [
             { name: 'home', route: '/' },
             { name: 'customer support', route: '/support', active: true },
+          ]
+          break
+        case fullPath.includes('pricing'):
+          breadCrumbLayers = [
+            { name: 'home', route: '/' },
+            { name: 'pricing', route: '/pricing', active: true },
           ]
           break
       }

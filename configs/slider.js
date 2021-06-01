@@ -29,3 +29,27 @@ export const particleSliderConfig = {
     500: { perView: 2, peek: 0 },
   },
 }
+export const commentsSliderConfig = {
+  type: 'slider',
+  rewind: true,
+  rewindDuration: 800,
+  startAt: 0,
+  perView: 1,
+  focusAt: 'center',
+  gap: 0,
+  autoplay: 4000,
+  hoverpause: true,
+  keyboard: false,
+  swipeThreshold: 80,
+  dragThreshold: 150,
+  perTouch: 1,
+  animationDuration: 400,
+  animationTimingFunc: 'ease',
+  direction: 'ltr',
+  peek: 0,
+  // breakpoints: {
+  //   1000: { perView: 4, peek: 0 },
+  //   750: { perView: 3, peek: 0 },
+  //   500: { perView: 2, peek: 0 },
+  // },
+}

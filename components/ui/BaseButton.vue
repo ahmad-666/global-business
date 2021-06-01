@@ -32,6 +32,9 @@ export default {
         case 'primary':
           cssClass.primary = true
           break
+        case 'primary-hover':
+          cssClass.primaryHover = true
+          break
       }
       return cssClass
     },
@@ -84,6 +87,17 @@ export default {
 }
 .primary {
   background-color: $primaryColor;
+}
+.primaryHover {
+  background-color: $primaryColor;
+  transition: all 0.3s linear;
+  &:hover {
+    background-color: white;
+    border: 1px solid $primaryColor;
+    > * {
+      color: $primaryColor !important;
+    }
+  }
 }
 .btn {
   padding: 0.75em 1.25em;
