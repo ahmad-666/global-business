@@ -35,6 +35,12 @@ export default {
         case 'primary-hover':
           cssClass.primaryHover = true
           break
+        case 'dark-blue':
+          cssClass.darkBlue = true
+          break
+        case 'market-card':
+          cssClass.marketCard = true
+          break
       }
       return cssClass
     },
@@ -88,6 +94,14 @@ export default {
 .primary {
   background-color: $primaryColor;
 }
+.darkBlue {
+  background-color: $dark-blue;
+  color: white;
+  transition: all 0.3s linear;
+  &:hover {
+    background-color: $primaryColor;
+  }
+}
 .primaryHover {
   background-color: $primaryColor;
   transition: all 0.3s linear;
@@ -97,6 +111,10 @@ export default {
       color: white !important;
     }
   }
+}
+.marketCard {
+  background-color: #444;
+  border-radius: 1em;
 }
 .btn {
   padding: 0.75em 1.25em;

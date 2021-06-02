@@ -16,6 +16,12 @@ import {
   faStar,
   faPlus,
   faMinus,
+  faChevronRight,
+  faChevronDown,
+  faChevronUp,
+  faGlobeAmericas,
+  faShareAlt,
+  faLayerGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -42,6 +48,12 @@ library.add(
   faCopy,
   faStar,
   faPlus,
-  faMinus
+  faMinus,
+  faChevronRight,
+  faChevronDown,
+  faChevronUp,
+  faGlobeAmericas,
+  faShareAlt,
+  faLayerGroup
 )
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

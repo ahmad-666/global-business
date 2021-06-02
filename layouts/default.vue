@@ -40,6 +40,8 @@ export default {
         case fullPath.includes('contact'):
           title = 'CONTACT US'
           break
+        default:
+          title = 'Home'
       }
       return title
     },
@@ -63,6 +65,9 @@ export default {
           subTitle =
             'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
           break
+        default:
+          subTitle =
+            'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       }
       return subTitle
     },
@@ -94,6 +99,8 @@ export default {
             { name: 'contact', route: '/contact', active: true },
           ]
           break
+        default:
+          breadCrumbLayers = [{ name: 'home', route: '/', active: true }]
       }
       return breadCrumbLayers
     },
