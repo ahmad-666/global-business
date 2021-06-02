@@ -10,4 +10,7 @@ export default {
     state.socials = socials
     state.footerPosts = footerPosts
   },
+  setCounterItems(state, payload) {
+    state.counterItems = payload.counterItems
+  },
 }

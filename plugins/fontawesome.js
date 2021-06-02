@@ -22,6 +22,9 @@ import {
   faGlobeAmericas,
   faShareAlt,
   faLayerGroup,
+  // faEdit,
+  faShoppingCart,
+  faHeadset,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -29,6 +32,12 @@ import {
   faGoogle,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
+import {
+  // faCopy,
+  faMoneyBillAlt,
+  faEdit,
+  faCreditCard,
+} from '@fortawesome/free-regular-svg-icons'
 config.autoAddCss = false
 library.add(
   faPhoneAlt,
@@ -54,6 +63,11 @@ library.add(
   faChevronUp,
   faGlobeAmericas,
   faShareAlt,
-  faLayerGroup
+  faLayerGroup,
+  faEdit,
+  faShoppingCart,
+  faCreditCard,
+  faHeadset,
+  faMoneyBillAlt
 )
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

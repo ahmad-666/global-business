@@ -39,7 +39,10 @@ export default {
           cssClass.darkBlue = true
           break
         case 'market-card':
-          cssClass.marketCard = true
+          cssClass.marketCardBtn = true
+          break
+        case 'white-bg':
+          cssClass.whiteBg = true
           break
       }
       return cssClass
@@ -112,9 +115,20 @@ export default {
     }
   }
 }
-.marketCard {
-  background-color: #444;
-  border-radius: 1em;
+.marketCardBtn {
+  background-color: $black;
+  border-radius: 1em !important;
+  padding: 0.75em 1.2em !important;
+}
+.whiteBg {
+  background-color: white;
+  transition: all 0.3s linear;
+  &:hover {
+    background-color: $primaryColor;
+    > * {
+      color: white !important;
+    }
+  }
 }
 .btn {
   padding: 0.75em 1.25em;

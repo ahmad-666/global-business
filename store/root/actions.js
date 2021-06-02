@@ -33,5 +33,31 @@ export default {
         },
       ],
     })
+    vuexContext.commit('setCounterItems', {
+      counterItems: [
+        {
+          id: 1,
+          icon: 'folder',
+          finalVal: 1540,
+          duration: 4000,
+          label: 'project',
+        },
+        {
+          id: 2,
+          icon: 'copy',
+          finalVal: 2530,
+          duration: 4000,
+          label: 'awards',
+        },
+        {
+          id: 3,
+          icon: 'user',
+          finalVal: 8120,
+          duration: 4000,
+          label: 'clients',
+        },
+        { id: 4, icon: 'star', finalVal: 1620, duration: 4000, label: 'rates' },
+      ],
+    })
   },
 }

@@ -18,7 +18,7 @@ export default {
       required: true,
     },
     icon: {
-      type: String,
+      type: [String, Array],
       required: true,
     },
     title: {
@@ -42,11 +42,28 @@ export default {
 .stepCard {
   width: 100%;
   position: relative;
-  padding: 4em 2em;
+  padding: 4em;
   background-color: darken(white, 5%);
+  transition: all 0.3s linear;
+  &:hover {
+    background-color: $black;
+    transform: translateY(-1em);
+    .icon {
+      color: white;
+    }
+    .title {
+      color: white;
+    }
+    .desc {
+      color: white;
+    }
+    .link {
+      color: white;
+    }
+  }
   .indexNum {
-    width: 5em;
-    height: 5em;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -54,30 +71,33 @@ export default {
     color: white;
     background-color: $primaryColor;
     font-weight: 700;
-    font-size: $fontXL;
+    font-size: $fontL;
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
   }
   .icon {
-    color: $black_light;
-    font-size: $fontL;
+    color: $grey;
+    font-size: $fontXL + 1em;
   }
   .title {
-    margin-top: 2em;
+    margin-top: 1em;
     font-size: $fontL + 0.5em;
     color: $black_light;
+    font-weight: lighter;
   }
   .desc {
     margin-top: 1em;
     color: $grey;
     font-size: $fontM;
+    line-height: 1.75em;
   }
   .link {
     font-size: $fontM;
     color: $grey;
-
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
     .arrow {
       margin-left: 1em;
     }

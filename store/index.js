@@ -10,6 +10,7 @@ export const state = () => {
     address: '',
     socials: [],
     footerPosts: [],
+    counterItems: [],
   }
 }
 

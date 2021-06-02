@@ -22,6 +22,10 @@ export default {
       type: String,
       required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
@@ -29,7 +33,8 @@ export default {
 @import '~/assets/styles/colors.scss';
 @import '~/assets/styles/variables.scss';
 .dollarFeature {
-  width: 100%;
+  // width: 100%;
+  width: 75%;
   .title {
     display: flex;
     align-items: center;
@@ -38,14 +43,15 @@ export default {
       height: 6em;
     }
     h6 {
-      font-size: $fontL;
+      font-size: $fontL + 0.5em;
       color: $black_light;
-      margin-left: 1em;
+      margin-left: 0.2em;
+      font-weight: lighter;
     }
   }
   .txt {
     margin-top: 0.5em;
-    color: $grey_light;
+    color: $grey;
     font-size: $fontM;
   }
 }

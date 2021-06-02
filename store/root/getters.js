@@ -20,4 +20,7 @@ export default {
   footerPosts(state) {
     return state.footerPosts
   },
+  counterItems(state) {
+    return state.counterItems
+  },
 }

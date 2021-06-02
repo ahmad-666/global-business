@@ -4,8 +4,8 @@
       <font-awesome-icon class="icon" :icon="icon"></font-awesome-icon>
     </div>
     <div class="content">
-      <h6>{{ title }}</h6>
-      <p>{{ txt }}</p>
+      <h6 class="title">{{ title }}</h6>
+      <p class="txt">{{ txt }}</p>
     </div>
   </div>
 </template>
@@ -35,26 +35,29 @@ export default {
   display: flex;
   align-items: center;
   .iconParent {
-    width: 7em;
-    height: 7em;
+    width: 6em;
+    height: 6em;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $primaryColor;
     .icon {
-      font-size: $fontXL;
+      font-size: $fontL + 0.5em;
       color: white;
     }
   }
   .content {
+    margin-left: 1em;
     .title {
-      font-size: $fontXL;
-      color: $black;
+      font-size: $fontL + 0.35em;
+      color: $black_light;
+      font-weight: lighter;
     }
     .txt {
       font-size: $fontM;
       color: $grey;
+      margin-top: 0.5em;
     }
   }
 }
