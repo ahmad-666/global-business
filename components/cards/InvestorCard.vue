@@ -2,28 +2,24 @@
   <div class="investorCard">
     <div class="img">
       <img :src="imgSrc" :alt="imgSrc" />
-      <transition name="opacity">
-        <div v-if="showDetails" class="filter"></div>
-      </transition>
-      <transition name="opacity-mode">
-        <div v-if="showDetails" class="info">
-          <p v-if="tel" class="tel">{{ tel }}</p>
-          <p v-if="email" class="email">{{ email }}</p>
-          <div v-if="socials.length" class="socials">
-            <nuxt-link
-              v-for="social in socials"
-              :key="social.type"
-              :to="social.link"
-              class="social"
-            >
-              <font-awesome-icon
-                class="icon"
-                :icon="['fab', social.type]"
-              ></font-awesome-icon>
-            </nuxt-link>
-          </div>
+      <div class="filter"></div>
+      <div class="info">
+        <p v-if="tel" class="tel">{{ tel }}</p>
+        <p v-if="email" class="email">{{ email }}</p>
+        <div v-if="socials.length" class="socials">
+          <nuxt-link
+            v-for="social in socials"
+            :key="social.icon"
+            :to="social.link"
+            class="social"
+          >
+            <font-awesome-icon
+              class="icon"
+              :icon="['fab', social.icon]"
+            ></font-awesome-icon>
+          </nuxt-link>
         </div>
-      </transition>
+      </div>
     </div>
     <div class="content">
       <p class="name">{{ name }}</p>
@@ -71,8 +67,17 @@ export default {
   overflow: hidden;
   .img {
     width: 100%;
-    height: 30em;
+    height: 35em;
     position: relative;
+    &:hover {
+      .filter {
+        opacity: 1;
+      }
+      .info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     img {
       width: 100%;
       height: 100%;
@@ -85,20 +90,14 @@ export default {
       top: 0;
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.65);
-    }
-    .opacity-enter,
-    .opacity-leave-to {
       opacity: 0;
-    }
-    .opacity-enter-active,
-    .opacity-leave-active {
       transition: all 0.3s linear;
     }
-    .opacity-enter-to,
-    .opacity-leave {
-      opacity: 1;
-    }
+
     .info {
+      opacity: 0;
+      transform: translateY(2em);
+      transition: all 0.3s linear;
       width: 100%;
       position: absolute;
       bottom: 2em;
@@ -110,7 +109,9 @@ export default {
       .email {
         font-size: $fontM;
         color: white;
-        font-weight: 700;
+      }
+      .email {
+        margin-top: 1em;
       }
       .socials {
         display: flex;
@@ -118,39 +119,33 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
+        margin-top: 2em;
         .social {
           .icon {
             font-size: $fontL;
-            color: $grey;
+            color: white;
+            margin: 0 0.3em;
           }
         }
       }
     }
   }
-  .opacity-move-enter,
-  .opacity-move-leave-to {
-    opacity: 0;
-    transform: translateY(3em);
-  }
-  .opacity-move-enter-active,
-  .opacity-move-leave-active {
-    transition: all 0.3s linear;
-  }
-  .opacity-move-enter-to,
-  .opacity-move-leave {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
   .content {
+    .name,
+    .rank {
+      text-align: center;
+    }
     .name {
       font-size: $fontL;
       font-weight: 700;
       color: $black;
+      margin-top: 0.5em;
     }
     .rank {
       font-size: $fontM;
       color: $grey;
-      margin-top: 1em;
+      margin-top: 0.5em;
     }
   }
 }

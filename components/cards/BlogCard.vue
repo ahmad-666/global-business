@@ -59,7 +59,7 @@ export default {
 
   .img {
     width: 100%;
-    height: 20em;
+    height: 25em;
     position: relative;
     img {
       width: 100%;
@@ -79,30 +79,31 @@ export default {
       }
       p {
         font-size: $fontM;
+        margin-left: 0.5em;
       }
     }
   }
   .content {
     background-color: darken(white, 7%);
-    padding: 3em 2em;
+    padding: 2em;
     .label {
       font-size: $fontM;
       color: $primaryColor;
     }
     .title {
-      margin-top: 1em;
+      margin-top: 0.2em;
       font-size: $fontL;
       color: $black_light;
     }
     .desc {
-      margin-top: 1em;
+      margin-top: 0.5em;
       font-size: $fontM;
       color: $grey;
     }
     .readMore {
       display: flex;
       align-items: center;
-      margin-top: 2em;
+      margin-top: 1em;
       color: $grey;
       font-size: $fontM;
       p {

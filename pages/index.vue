@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="revSlider">
+      <rev-slider></rev-slider>
+    </div>
     <div class="homeSteps">
       <home-steps></home-steps>
     </div>
@@ -12,11 +15,17 @@
     <div class="whyUs">
       <why-us></why-us>
     </div>
-    <!-- <div class="contactUs">
+    <div class="contactUs">
       <home-contact-us></home-contact-us>
-    </div> -->
+    </div>
+    <div class="ourInvestors">
+      <our-investors></our-investors>
+    </div>
     <div class="homeCounter">
       <home-counter></home-counter>
+    </div>
+    <div class="homeBlogs">
+      <home-blogs></home-blogs>
     </div>
   </div>
 </template>
@@ -26,16 +35,22 @@ import HomeSteps from '~/components/HomeSteps.vue'
 import DollarFeatures from '~/components/DollarFeatures.vue'
 import BaseMarket from '~/components/BaseMarket.vue'
 import WhyUs from '~/components/WhyUs.vue'
-// import HomeContactUs from '~/components/HomeContactUs.vue'
+import HomeContactUs from '~/components/HomeContactUs.vue'
 import HomeCounter from '~/components/HomeCounter.vue'
+import OurInvestors from '~/components/OurInvestors.vue'
+import HomeBlogs from '~/components/HomeBlogs.vue'
+import RevSlider from '~/components/RevSlider.vue'
 export default {
   components: {
     HomeSteps,
     DollarFeatures,
     BaseMarket,
     WhyUs,
-    // HomeContactUs,
+    HomeContactUs,
     HomeCounter,
+    OurInvestors,
+    HomeBlogs,
+    RevSlider,
   },
 }
 </script>

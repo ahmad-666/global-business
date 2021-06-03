@@ -2,12 +2,12 @@
   <div class="homeSteps">
     <h6 class="title">3 Easy Steps to Get Started</h6>
     <base-line width="12em"></base-line>
-    <div class="txt">
+    <p class="txt">
       Here is 3 Easy Steps to Busy & Sell Dollar. Lorem Ipsum has been the
       industry's standard dummy text ever since the 1500s, when an unknown
       printer took a galley of type and scrambled it to make a type specimen
       book.
-    </div>
+    </p>
     <div class="cards">
       <div v-for="(card, i) in cards" :key="card.id" class="card">
         <home-steps-card
