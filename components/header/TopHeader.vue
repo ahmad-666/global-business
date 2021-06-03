@@ -12,26 +12,35 @@
       </div>
     </div>
     <div class="right">
-      <nuxt-link to="/signin" class="item">
+      <button class="btn" @click="showLogin">
         <font-awesome-icon icon="lock" class="icon"></font-awesome-icon>
         <p>login</p>
-      </nuxt-link>
+      </button>
       <div class="line"></div>
-      <nuxt-link to="/signup" class="item">
+      <button class="btn" @click="showRegister">
         <font-awesome-icon icon="user" class="icon"></font-awesome-icon>
         <p>register</p>
-      </nuxt-link>
+      </button>
     </div>
   </div>
 </template>
 <script>
 export default {
+  inject: ['fireShowRegister', 'fireShowLogin'],
   computed: {
     tel() {
       return this.$store.getters.tel
     },
     email() {
       return this.$store.getters.email
+    },
+  },
+  methods: {
+    showLogin() {
+      this.fireShowLogin()
+    },
+    showRegister() {
+      this.fireShowRegister()
     },
   },
 }
@@ -82,6 +91,18 @@ export default {
       width: 0.1em;
       height: 2em;
       background-color: white;
+    }
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: $fontM;
+    background-color: transparent;
+    margin: 0 1em;
+    p {
+      margin-left: 0.5em;
+      text-transform: capitalize;
     }
   }
 }

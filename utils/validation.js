@@ -14,3 +14,7 @@ export const validateRequired = val => {
   if (!val || !val.trim().length) return false
   return true
 }
+export const validateMinLength = (val, minLength) => {
+  if (val.trim().length < minLength) return false
+  return true
+}

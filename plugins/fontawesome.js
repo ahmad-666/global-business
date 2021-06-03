@@ -25,6 +25,7 @@ import {
   // faEdit,
   faShoppingCart,
   faHeadset,
+  faArrowUp,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -68,6 +69,7 @@ library.add(
   faShoppingCart,
   faCreditCard,
   faHeadset,
-  faMoneyBillAlt
+  faMoneyBillAlt,
+  faArrowUp
 )
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

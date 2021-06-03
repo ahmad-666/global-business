@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="revSlider">
-      <rev-slider></rev-slider>
-    </div>
     <div class="homeSteps">
       <home-steps></home-steps>
     </div>
@@ -39,7 +36,6 @@ import HomeContactUs from '~/components/HomeContactUs.vue'
 import HomeCounter from '~/components/HomeCounter.vue'
 import OurInvestors from '~/components/OurInvestors.vue'
 import HomeBlogs from '~/components/HomeBlogs.vue'
-import RevSlider from '~/components/RevSlider.vue'
 export default {
   components: {
     HomeSteps,
@@ -50,13 +46,8 @@ export default {
     HomeCounter,
     OurInvestors,
     HomeBlogs,
-    RevSlider,
   },
 }
 </script>
 
-<style>
-.container {
-  color: red;
-}
-</style>
+<style lang="scss" scoped></style>

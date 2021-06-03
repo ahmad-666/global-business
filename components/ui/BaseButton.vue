@@ -1,5 +1,6 @@
 <template>
   <button
+    :disabled="disabled"
     :type="type"
     class="btn"
     :class="{ ...cssTypeClass, ...cssSizeClass }"
@@ -22,6 +23,10 @@ export default {
     size: {
       type: String,
       default: 'm',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ['clickHandler'],
@@ -133,5 +138,13 @@ export default {
 .btn {
   padding: 0.75em 1.25em;
   border-radius: 0.25em;
+  &:disabled {
+    cursor: auto;
+    background-color: darken(white, 20%) !important;
+    color: white;
+    > * {
+      color: white !important;
+    }
+  }
 }
 </style>
