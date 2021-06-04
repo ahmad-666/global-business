@@ -153,7 +153,6 @@ nav {
       right: 0;
       top: calc(100% + 3em);
       box-shadow: 0 1em 1em 0 rgba(0, 0, 0, 0.3);
-
       li {
         width: 100%;
         padding: 1.5em 1.5em;
