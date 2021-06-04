@@ -115,7 +115,14 @@ export default {
       margin-left: 0;
     }
     .left {
+      width: 100%;
       margin-top: 4em;
+      img {
+        display: block;
+        max-width: 95vw;
+        height: 50em;
+        margin: 0 auto;
+      }
     }
   }
 }
