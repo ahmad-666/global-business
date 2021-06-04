@@ -132,4 +132,14 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1200px) {
+  .container {
+    .socials {
+      justify-content: flex-start;
+      .social {
+        margin: 1em;
+      }
+    }
+  }
+}
 </style>

@@ -112,7 +112,18 @@ header {
     width: 100%;
     margin-top: 12em;
     position: relative;
-    z-index: 3;
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 850px) {
+  header {
+    .content {
+      .txts {
+        p {
+          max-width: 90%;
+        }
+      }
+    }
   }
 }
 </style>

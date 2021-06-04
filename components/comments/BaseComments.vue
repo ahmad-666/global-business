@@ -80,10 +80,11 @@ export default {
 @import '~/assets/styles/variables.scss';
 .commentsContainer {
   width: 100%;
-  background-color: white;
+  background-color: darken(white, 5%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5em $header_padding;
   > img {
     width: 8em;
     height: 7em;
@@ -137,6 +138,27 @@ export default {
     .user.active {
       border: 5px solid $primaryColor;
     }
+  }
+}
+@media screen and (max-width: 100px) {
+  .commentsContainer {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 750px) {
+  .commentsContainer {
+    .comments {
+      .glide__slide {
+        .txt {
+          max-width: 90%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .commentsContainer {
+    padding: 5em $header_padding / 4;
   }
 }
 </style>

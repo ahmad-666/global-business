@@ -25,6 +25,16 @@ module.exports = {
     'no-plusplus': 'off',
     'spaced-comment': 'warn',
     'no-nested-ternary': 'off',
-    'prettier/prettier': 'warn', // by default in nuxt prettier gives us 'error' not 'warn'
+    // 'prettier/prettier': 'warn',
+    'prettier/prettier': [
+      'warn', // by default prettier gives us error , now it will gives us warning
+      {
+        semi: false,
+        tabWidth: 2,
+        singleQuote: true,
+        arrowParens: 'avoid',
+        endOfLine: 'auto', // FIX 'LF','CR' problem
+      },
+    ],
   },
 }

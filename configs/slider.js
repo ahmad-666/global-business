@@ -24,9 +24,9 @@ export const particleSliderConfig = {
   peek: 0, // distance value of the next/previous viewports which have to peek in the current view , 50px from left and 50px from right
   // peek and focusAt will affect each other , if we use focusAt: 'center' set peek:0
   breakpoints: {
-    1000: { perView: 4, peek: 0 },
-    750: { perView: 3, peek: 0 },
-    500: { perView: 2, peek: 0 },
+    950: { perView: 4, focusAt: 0 },
+    750: { perView: 3 },
+    500: { perView: 2 },
   },
 }
 export const commentsSliderConfig = {

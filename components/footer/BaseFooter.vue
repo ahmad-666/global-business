@@ -34,7 +34,7 @@ export default {
 footer {
   width: 100%;
   background-color: $footer_bg;
-  padding: 8em $footer_padding;
+  padding: 8em $header_padding;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +61,42 @@ footer {
   .newsletterContainer {
     flex-shrink: 0;
     width: 30em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  footer {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    .infosContainer,
+    .postsContainer,
+    .linksContainer,
+    .newsletterContainer {
+      width: calc((100% - (2 * 4em)) / 2) !important;
+      margin: 2em !important;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  footer {
+    padding: 5em $header_padding / 4;
+  }
+}
+@media screen and (max-width: 450px) {
+  footer {
+    .infosContainer,
+    .postsContainer,
+    .linksContainer,
+    .newsletterContainer {
+      width: 100% !important;
+    }
   }
 }
 </style>

@@ -21,6 +21,9 @@
     <div class="homeCounter">
       <home-counter></home-counter>
     </div>
+    <div class="comments">
+      <base-comments :comments="comments"></base-comments>
+    </div>
     <div class="homeBlogs">
       <home-blogs></home-blogs>
     </div>
@@ -36,6 +39,7 @@ import HomeContactUs from '~/components/HomeContactUs.vue'
 import HomeCounter from '~/components/HomeCounter.vue'
 import OurInvestors from '~/components/OurInvestors.vue'
 import HomeBlogs from '~/components/HomeBlogs.vue'
+import BaseComments from '~/components/comments/BaseComments.vue'
 export default {
   components: {
     HomeSteps,
@@ -46,6 +50,12 @@ export default {
     HomeCounter,
     OurInvestors,
     HomeBlogs,
+    BaseComments,
+  },
+  computed: {
+    comments() {
+      return this.$store.getters.comments
+    },
   },
 }
 </script>

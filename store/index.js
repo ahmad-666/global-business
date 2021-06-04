@@ -11,6 +11,7 @@ export const state = () => {
     socials: [],
     footerPosts: [],
     counterItems: [],
+    comments: [],
   }
 }
 

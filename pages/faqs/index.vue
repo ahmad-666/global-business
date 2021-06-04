@@ -75,4 +75,14 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .faqsContainer {
+    padding: 4em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .faqsContainer {
+    padding: 4em $header_padding / 4;
+  }
+}
 </style>

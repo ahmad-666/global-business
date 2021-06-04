@@ -19,4 +19,14 @@ export default {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 5em $header_padding / 2 0 $header_padding / 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 5em $header_padding / 4 0 $header_padding / 4;
+  }
+}
 </style>

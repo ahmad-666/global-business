@@ -95,4 +95,14 @@ export default {
     z-index: 1;
   }
 }
+@media screen and (max-width: 1000px) {
+  .particleContainer {
+    padding: 2em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .particleContainer {
+    padding: 2em $header_padding / 4;
+  }
+}
 </style>

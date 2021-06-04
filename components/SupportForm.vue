@@ -208,4 +208,13 @@ export default {
     }
   }
 }
+@media screen and (max-width: 650px) {
+  .supportForm {
+    flex-direction: column-reverse;
+
+    .form {
+      margin-left: 0em;
+    }
+  }
+}
 </style>

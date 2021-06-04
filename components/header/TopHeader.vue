@@ -106,4 +106,28 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .topHeader {
+    padding: 1em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .topHeader {
+    padding: 1em $header_padding / 4;
+    .left,
+    .right {
+      flex-direction: column;
+      align-items: flex-start;
+      .item {
+        margin: 0.5em 0;
+      }
+      .line {
+        display: none;
+      }
+    }
+    .btn {
+      margin: 0.5em 0;
+    }
+  }
+}
 </style>

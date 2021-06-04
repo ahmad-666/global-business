@@ -146,4 +146,29 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .homeCounter {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 900px) {
+  .homeCounter {
+    flex-direction: column;
+    .left {
+      display: flex;
+      flex-direction: column;
+      ul {
+        margin-top: 0;
+      }
+    }
+    .right {
+      margin-top: 4em;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .homeCounter {
+    padding: 5em $header_padding / 4;
+  }
+}
 </style>

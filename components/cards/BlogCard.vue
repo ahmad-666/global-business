@@ -114,4 +114,32 @@ export default {
     }
   }
 }
+@media screen and (max-width: 650px) {
+  .blogCard {
+    display: flex;
+    align-items: stretch;
+
+    .img {
+      flex-shrink: 0;
+      width: 30em;
+      height: auto;
+    }
+    .content {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .blogCard {
+    display: block;
+
+    .img {
+      width: 100%;
+      height: 34em;
+    }
+    .content {
+      width: 100%;
+    }
+  }
+}
 </style>

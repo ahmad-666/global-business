@@ -254,4 +254,36 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .contactWrapper {
+    .contactContainer {
+      padding: 4em $header_padding / 2;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .contactWrapper {
+    .contactContainer {
+      flex-direction: column-reverse;
+      align-items: center;
+      .left {
+        width: 100%;
+        margin-top: 2em;
+      }
+      .contactForm {
+        margin-left: 0em;
+      }
+    }
+    .mapContainer {
+      height: 45em;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .contactWrapper {
+    .contactContainer {
+      padding: 4em $header_padding / 4;
+    }
+  }
+}
 </style>

@@ -46,7 +46,7 @@ export default {
         txt: 'Lorem ipsum madolor sit, consectetur adipisicing elit, eiusmod tempor sicing elit, eiusmod tempor.',
       },
       {
-        id: 1,
+        id: 2,
         icon: 'layer-group',
         title: 'Completely Decentralized',
         txt: 'Lorem ipsum madolor sit, consectetur adipisicing elit, eiusmod tempor sicing elit, eiusmod tempor.',

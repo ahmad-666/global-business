@@ -23,4 +23,7 @@ export default {
   counterItems(state) {
     return state.counterItems
   },
+  comments(state) {
+    return state.comments
+  },
 }

@@ -78,7 +78,6 @@ export default {
     return {
       plans: [],
       descItems: [],
-      comments: [],
     }
   },
   fetch() {
@@ -158,36 +157,14 @@ export default {
         id: 6,
       },
     ]
-    this.comments = [
-      {
-        id: 1,
-        content:
-          'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.',
-        username: 'Rinks Cooper',
-        userRank: 'CEO, GlobalBusiness',
-        userImgSrc: 'imgs/feedback/01.jpg',
-      },
-      {
-        id: 2,
-        content:
-          'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.',
-        username: 'JD Scot',
-        userRank: 'CEO, GlobalBusiness',
-        userImgSrc: 'imgs/feedback/02.jpg',
-      },
-      {
-        id: 3,
-        content:
-          'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.',
-        username: 'Haris Morgan',
-        userRank: 'CEO, GlobalBusiness',
-        userImgSrc: 'imgs/feedback/03.jpg',
-      },
-    ]
   },
   computed: {
     counterItems() {
       return this.$store.getters.counterItems
+    },
+
+    comments() {
+      return this.$store.getters.comments
     },
   },
 }
@@ -197,8 +174,7 @@ export default {
 @import '~/assets/styles/variables.scss';
 .basePricing {
   width: 100%;
-  .topSection,
-  .bottomSection {
+  .topSection {
     width: 100%;
     background-color: white;
     padding: 5em $header_padding;
@@ -301,6 +277,69 @@ export default {
   .comments {
     width: 100%;
     background-color: $section_bg_color;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .basePricing {
+    .topSection {
+      padding: 5em $header_padding / 2;
+    }
+
+    .counterSection {
+      padding: 4em $header_padding / 2;
+    }
+  }
+}
+@media screen and (max-width: 1180px) {
+  .basePricing {
+    .cards {
+      .card {
+        width: calc((100% - (3 * 2em)) / 3);
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .basePricing {
+    .cards {
+      .card {
+        width: calc((100% - (2 * 2em)) / 2);
+      }
+    }
+    .descContainer {
+      .items {
+        .item {
+          width: 100%;
+        }
+      }
+    }
+    .counterSection {
+      .items {
+        .item {
+          width: calc((100% - (2 * 2em)) / 2);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .basePricing {
+    .topSection {
+      padding: 5em $header_padding / 4;
+    }
+
+    .counterSection {
+      padding: 4em $header_padding / 4;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .basePricing {
+    .cards {
+      .card {
+        width: 100%;
+      }
+    }
   }
 }
 </style>

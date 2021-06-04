@@ -112,6 +112,7 @@ export default {
   overflow: hidden;
   input {
     width: 100%;
+    height: 100%;
     padding: 0.75em;
     font-size: 1em;
   }

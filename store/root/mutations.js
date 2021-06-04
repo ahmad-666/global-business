@@ -13,4 +13,7 @@ export default {
   setCounterItems(state, payload) {
     state.counterItems = payload.counterItems
   },
+  setComments(state, payload) {
+    state.comments = payload.comments
+  },
 }

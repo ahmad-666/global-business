@@ -175,33 +175,43 @@ export default {
     }
   }
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width: 1250px) {
   .ourInvestors {
-  padding: 5em $header_padding;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .title {
-    font-size: $fontXL + 1em;
-    color: $black_light;
-    font-weight: lighter;
-  }
-  .txt {
-    margin-top: 2em;
-    font-size: $fontM;
-    color: $grey;
-    text-align: center;
-  }
-  .investors {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 4em;
-    .investor {
-      width: calc((100% - (4 * 3em)) / 4);
-      margin: 1.5em;
+    .investors {
+      .investor {
+        width: calc((100% - (3 * 3em)) / 3);
+      }
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .ourInvestors {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 650px) {
+  .ourInvestors {
+    .investors {
+      .investor {
+        width: calc((100% - (2 * 3em)) / 2);
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .ourInvestors {
+    padding: 5em $header_padding / 4;
+  }
+}
+@media screen and (max-width: 420px) {
+  .ourInvestors {
+    .investors {
+      .investor {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 </style>
