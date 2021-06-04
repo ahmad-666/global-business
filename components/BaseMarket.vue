@@ -157,4 +157,44 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .marketContainer {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 850px) {
+  .marketContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    .infos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .btn {
+        margin-top: 0.5em;
+      }
+    }
+    .markets {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 2em;
+      .market {
+        width: calc((100% - (2 * 2em)) / 2);
+        margin: 1em;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .marketContainer {
+    padding: 5em $header_padding / 4;
+
+    .markets {
+      .market {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

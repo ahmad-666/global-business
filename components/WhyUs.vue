@@ -102,4 +102,26 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .whyUs {
+    padding: 5em $header_padding / 2 0 $header_padding / 2;
+  }
+}
+@media screen and (max-width: 850px) {
+  .whyUs {
+    flex-direction: column-reverse;
+    align-items: center;
+    .right {
+      margin-left: 0;
+    }
+    .left {
+      margin-top: 4em;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .whyUs {
+    padding: 5em $header_padding / 4 0 $header_padding / 4;
+  }
+}
 </style>

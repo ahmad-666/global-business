@@ -175,4 +175,33 @@ export default {
     }
   }
 }
+@media screen and (max-width:1000px){
+  .ourInvestors {
+  padding: 5em $header_padding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    font-size: $fontXL + 1em;
+    color: $black_light;
+    font-weight: lighter;
+  }
+  .txt {
+    margin-top: 2em;
+    font-size: $fontM;
+    color: $grey;
+    text-align: center;
+  }
+  .investors {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    .investor {
+      width: calc((100% - (4 * 3em)) / 4);
+      margin: 1.5em;
+    }
+  }
+}
+}
 </style>

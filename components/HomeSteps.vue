@@ -73,6 +73,7 @@ export default {
     font-size: $fontXL + 1em;
     color: $black_light;
     font-weight: lighter;
+    text-align: center;
   }
   .txt {
     margin-top: 2em;
@@ -90,6 +91,22 @@ export default {
       width: calc((100% - (3 * 4em)) / 3);
       margin: 2em;
     }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .homeSteps {
+    padding: 5em $header_padding / 2;
+    .cards {
+      .card {
+        width: 100%;
+        margin: 2em 0 0 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .homeSteps {
+    padding: 5em $header_padding / 4;
   }
 }
 </style>

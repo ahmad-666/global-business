@@ -108,6 +108,7 @@ export default {
     font-size: $fontXL + 1em;
     color: $black_light;
     font-weight: lighter;
+    text-align: center;
   }
   .txt {
     margin-top: 2em;
@@ -183,6 +184,48 @@ export default {
       }
       &:nth-child(6n + 6) {
         transform: translateX(18em);
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .dollarFeatures {
+    padding: 5em $header_padding / 2;
+  }
+}
+@media screen and (max-width: 850px) {
+  .dollarFeatures {
+    .featuresContainer {
+      height: auto;
+    }
+    .imgs {
+      .outer-img {
+        display: none;
+      }
+      .inner-img {
+        left: initial;
+        right: 0.5em;
+        transform: translate(0, -50%);
+      }
+    }
+    .features {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .feature {
+        width: 100%;
+        margin: 3em 0 0 0;
+        transform: translateX(0em) !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .dollarFeatures {
+    padding: 5em $header_padding / 4;
+    .imgs {
+      .inner-img {
+        display: none;
       }
     }
   }

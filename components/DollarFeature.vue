@@ -39,7 +39,7 @@ export default {
     display: flex;
     align-items: center;
     img {
-      max-width: 8em;
+      width: 6em;
       height: 6em;
     }
     h6 {
@@ -53,6 +53,7 @@ export default {
     margin-top: 0.5em;
     color: $grey;
     font-size: $fontM;
+    max-width: 90%;
   }
 }
 .dollarFeature.reverse {
@@ -67,6 +68,29 @@ export default {
   }
   .txt {
     text-align: right;
+  }
+}
+@media screen and (max-width: 850px) {
+  .dollarFeature {
+    width: 100%;
+
+    .txt {
+      max-width: 100%;
+    }
+  }
+  .dollarFeature.reverse {
+    .title {
+      flex-direction: row;
+      img {
+        margin-left: 0em;
+      }
+      h6 {
+        margin-left: 0.5em;
+      }
+    }
+    .txt {
+      text-align: left;
+    }
   }
 }
 </style>

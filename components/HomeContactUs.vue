@@ -74,4 +74,36 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .homeContactUs {
+    padding: 6em $header_padding / 2;
+
+    .txt {
+      max-width: 75%;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .homeContactUs {
+    padding: 6em $header_padding / 4;
+
+    .txt {
+      max-width: 90%;
+    }
+    .infos {
+      flex-direction: column;
+      .info {
+        padding: 0 0em;
+
+        &:not(:last-child) {
+          border-right: none;
+        }
+
+        &:not(:first-child) {
+          margin-top: 2em;
+        }
+      }
+    }
+  }
+}
 </style>

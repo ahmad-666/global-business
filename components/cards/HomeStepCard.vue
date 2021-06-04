@@ -103,4 +103,15 @@ export default {
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .stepCard {
+    .indexNum {
+      width: 2em;
+      height: 2em;
+
+      left: 0.5em;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
 </style>

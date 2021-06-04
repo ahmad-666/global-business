@@ -35,6 +35,7 @@ export default {
   display: flex;
   align-items: center;
   .iconParent {
+    flex-shrink: 0;
     width: 6em;
     height: 6em;
     border-radius: 50%;
