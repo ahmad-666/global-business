@@ -35,6 +35,30 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
+    [
+      '@nuxtjs/vuetify',
+      {
+        breakpoint: {
+          thresholds: {
+            xs: 500,
+            sm: 750,
+            md: 1100,
+            lg: 1500,
+          },
+          mobileBreakpoint: 'sm',
+          scrollBarWidth: 16,
+        },
+        customVariables: ['~/assets/styles/vuetify/_variables.scss'],
+        treeShake: true,
+        rtl: false,
+        theme: {
+          dark: true,
+          themes: {
+            dark: {},
+          },
+        },
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

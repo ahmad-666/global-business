@@ -15,6 +15,10 @@
   font-family: ptSans;
   src: url('~/assets/fonts/PTSans-Regular.ttf');
 }
+html {
+  overflow-y: initial !important;
+  overflow-x: initial !important;
+}
 html,
 body {
   height: 100%;

@@ -1,6 +1,8 @@
 import Vue from 'vue'
+// import Vuetify from 'vuetify/lib'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import '@fortawesome/fontawesome-free/css/all.css'
 import {
   faPhoneAlt,
   faEnvelope,
