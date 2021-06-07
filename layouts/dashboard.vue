@@ -1,14 +1,37 @@
 <template>
   <v-app>
-    <v-app-bar app></v-app-bar>
-    <v-main>
+    <dashboard-nav @openDrawer="openDrawer"></dashboard-nav>
+    <dashboard-sidebar
+      :is-sidebar-open="isSidebarOpen"
+      @drawerInput="drawerInputHandler"
+    ></dashboard-sidebar>
+    <v-main class="px-8 py-16">
       <Nuxt />
     </v-main>
-    <v-footer></v-footer>
   </v-app>
 </template>
 <script>
-export default {}
+import DashboardNav from '~/components/dashboard/DashboardNav.vue'
+import DashboardSidebar from '~/components/dashboard/DashboardSidebar.vue'
+export default {
+  components: {
+    DashboardNav,
+    DashboardSidebar,
+  },
+  data() {
+    return {
+      isSidebarOpen: false,
+    }
+  },
+  methods: {
+    openDrawer() {
+      this.isSidebarOpen = true
+    },
+    drawerInputHandler(drawerIsOpen) {
+      this.isSidebarOpen = drawerIsOpen
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
 @import '~/assets/styles/colors.scss';

@@ -24,6 +24,7 @@ export default {
   plugins: [
     { src: '~/plugins/fontawesome.js' },
     { src: '~/plugins/globalComponents.js' },
+    { src: '~/plugins/vuetify.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -52,9 +53,15 @@ export default {
         treeShake: true,
         rtl: false,
         theme: {
-          dark: true,
+          dark: false,
           themes: {
-            dark: {},
+            light: {
+              primary: '#d1a316',
+              secondary: '#24262d',
+              error: '#DB524B',
+              textColor: '#888',
+              bgColor: '#f5f5f5',
+            },
           },
         },
       },
