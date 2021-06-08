@@ -1,0 +1,2 @@
+one scroll on entire wrapper 
+width/height of all boxes same no need for 100% width 

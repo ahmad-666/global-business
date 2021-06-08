@@ -6,7 +6,7 @@
       {{ title }}
     </h6>
     <div class="section primary pa=3 d-flex align-center pa-2">
-      <v-icon color="white" size="45">{{ icon }}</v-icon>
+      <v-icon color="white" size="35">{{ icon }}</v-icon>
       <v-spacer></v-spacer>
       <div class="txts d-flex align-center">
         <p class="white--text text-h4">{{ value }}</p>
