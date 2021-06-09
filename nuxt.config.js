@@ -61,6 +61,7 @@ export default {
               error: '#DB524B',
               textColor: '#888',
               bgColor: '#f5f5f5',
+              success: '#0ea704',
             },
           },
         },

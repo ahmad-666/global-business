@@ -92,7 +92,7 @@
                 </div>
               </div>
             </template>
-            <template #footer="slotProps">
+            <template #footer>
               <div
                 class="
                   tableFooter
@@ -104,19 +104,9 @@
               >
                 <p class="font-weight-light text-body-2 flex-shrink-0">
                   Showing
-                  {{
-                    showingStartText(
-                      slotProps.props.pagination.page,
-                      slotProps.props.pagination.itemsPerPage
-                    )
-                  }}
+                  {{ startText }}
                   to
-                  {{
-                    showingEndText(
-                      slotProps.props.pagination.page,
-                      slotProps.props.pagination.itemsPerPage
-                    )
-                  }}
+                  {{ endText }}
                   of {{ totalEntries }} entries
                 </p>
                 <v-spacer></v-spacer>
@@ -126,6 +116,39 @@
                   :total-visible="5"
                 ></v-pagination>
               </div>
+            </template>
+            <template #[`item.taxId`]="{ item }">
+              <p class="primary--text">{{ item.taxId }}</p>
+            </template>
+            <template #[`item.status`]="{ item }">
+              <p
+                v-if="item.status === 'confirmed payment'"
+                class="
+                  text-caption
+                  pa-1
+                  text-center
+                  rounded-l
+                  white--text
+                  success
+                  statusText
+                "
+              >
+                {{ item.status }}
+              </p>
+              <p
+                v-else
+                class="
+                  text-caption
+                  pa-1
+                  text-center
+                  rounded-l
+                  white--text
+                  error
+                  statusText
+                "
+              >
+                {{ item.status }}
+              </p>
             </template>
           </v-data-table>
         </v-card>
@@ -223,13 +246,11 @@ export default {
     totalPages() {
       return Math.ceil(this.invoicesData.length / this.pageSize)
     },
-  },
-  methods: {
-    showingStartText(page, perPage) {
-      return (page - 1) * perPage + 1
+    startText() {
+      return (this.page - 1) * this.pageSize + 1
     },
-    showingEndText(page, perPage) {
-      return (page - 1) * perPage + perPage
+    endText() {
+      return (this.page - 1) * this.pageSize + this.pageSize
     },
   },
 }
@@ -273,5 +294,8 @@ export default {
 }
 .tableFooter {
   width: 100%;
+}
+.statusText {
+  max-width: 10em;
 }
 </style>

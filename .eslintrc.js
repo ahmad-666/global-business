@@ -25,6 +25,12 @@ module.exports = {
     'no-plusplus': 'off',
     'spaced-comment': 'warn',
     'no-nested-ternary': 'off',
+    'vue/valid-v-slot': [
+      'error',
+      {
+        allowModifiers: true,
+      },
+    ],
     // 'prettier/prettier': 'warn',
     'prettier/prettier': [
       'warn', // by default prettier gives us error , now it will gives us warning
