@@ -32,4 +32,10 @@ export default {
   username(state) {
     return state.username
   },
+  avatarImgSrc(state) {
+    return state.avatarImgSrc
+  },
+  userId(state) {
+    return state.userId
+  },
 }

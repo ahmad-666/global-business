@@ -2,7 +2,7 @@
   <v-navigation-drawer
     v-model="isDrawerOpen"
     app
-    absolute
+    fixed
     bottom
     temporary
     dark
@@ -10,6 +10,35 @@
     class="py-6 px-3 d-flex flex-column"
     @input="drawerInputHandler"
   >
+    <div class="user d-flex flex-column align-center">
+      <v-avatar size="100">
+        <v-img width="100%" height="100%" :src="avatarImgSrc"></v-img>
+      </v-avatar>
+      <v-menu>
+        <template #activator="{ on, attrs }">
+          <v-btn text dark class="mt-2 text-body-2" v-bind="attrs" v-on="on">
+            {{ userId }}
+            <v-icon size="12" class="ml-2">fas fa-chevron-down</v-icon>
+          </v-btn>
+        </template>
+        <v-list dark color="secondary lighten-2" class="pa-0">
+          <v-list-item
+            v-for="avatarMenuItem in avatarMenuItems"
+            :key="avatarMenuItem.text"
+            class="pa-2 border-bottom-dark"
+            @click="avatarMenuItem.onClick"
+          >
+            <v-list-item-content>
+              <v-list-item-title
+                class="white--text text-body-2 font-weight-light"
+                >{{ avatarMenuItem.text }}</v-list-item-title
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <p class="text-caption grey--text text--darken-1">{{ username }}</p>
+    </div>
     <div class="items">
       <v-list class="mt-4">
         <v-list-item v-for="sidebarItem in sidebarItems" :key="sidebarItem.txt">
@@ -196,6 +225,21 @@ export default {
           ],
         },
       ],
+      avatarMenuItems: [
+        {
+          text: 'Profile',
+          onClick: () => {
+            this.$router.push('/dashboard/profile')
+          },
+        },
+        {
+          text: 'Logout',
+          onClick: () => {
+            // do logout
+            this.$router.replace('/')
+          },
+        },
+      ],
     }
   },
   computed: {
@@ -209,6 +253,15 @@ export default {
       set(val) {
         return val
       },
+    },
+    avatarImgSrc() {
+      return this.$store.getters.avatarImgSrc
+    },
+    username() {
+      return this.$store.getters.username
+    },
+    userId() {
+      return this.$store.getters.userId
     },
   },
   methods: {

@@ -34,6 +34,9 @@ export default {
       ],
       referralId: 886,
       username: 'mehrdad mola12',
+      avatarImgSrc:
+        '/imgs/sezar-themes/light-blue-ltr/images/default-avatar.png',
+      userId: 'fxtg4',
     })
     vuexContext.commit('setCounterItems', {
       counterItems: [

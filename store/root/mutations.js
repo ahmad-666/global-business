@@ -10,6 +10,8 @@ export default {
       emailTime,
       referralId,
       username,
+      avatarImgSrc,
+      userId,
     } = payload
     state.tel = tel
     state.telTime = telTime
@@ -20,6 +22,8 @@ export default {
     state.footerPosts = footerPosts
     state.referralId = referralId
     state.username = username
+    state.avatarImgSrc = avatarImgSrc
+    state.userId = userId
   },
   setCounterItems(state, payload) {
     state.counterItems = payload.counterItems

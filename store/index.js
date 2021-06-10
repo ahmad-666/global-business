@@ -14,6 +14,8 @@ export const state = () => {
     comments: [],
     referralId: null,
     username: '',
+    avatarImgSrc: '',
+    userId: '',
   }
 }
 
