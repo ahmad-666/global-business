@@ -197,10 +197,10 @@ export default {
               txt: 'binary summery',
               route: '/dashboard/binarySummery',
             },
-            {
-              txt: 'my tree',
-              route: '/dashboard/myTree',
-            },
+            // {
+            //   txt: 'my tree',
+            //   route: '/dashboard/myTree',
+            // },
           ],
         },
         {

@@ -25,6 +25,7 @@ export default {
     { src: '~/plugins/fontawesome.js' },
     { src: '~/plugins/globalComponents.js' },
     { src: '~/plugins/vuetify.js' },
+    { src: '~/plugins/lottie.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
