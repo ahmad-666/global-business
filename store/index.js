@@ -12,6 +12,8 @@ export const state = () => {
     footerPosts: [],
     counterItems: [],
     comments: [],
+    referralId: null,
+    username: '',
   }
 }
 

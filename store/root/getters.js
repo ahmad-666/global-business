@@ -26,4 +26,10 @@ export default {
   comments(state) {
     return state.comments
   },
+  referralId(state) {
+    return state.referralId
+  },
+  username(state) {
+    return state.username
+  },
 }

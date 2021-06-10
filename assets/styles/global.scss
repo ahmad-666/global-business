@@ -62,6 +62,18 @@ input[type='number'] {
 body .v-application p {
   margin-bottom: 0px;
 }
+.border-bottom-light {
+  border-bottom: 1px solid darken(white, 10%);
+}
+.border-bottom-dark {
+  border-bottom: 1px solid lighten(black, 25%);
+}
+.border-top-light {
+  border-top: 1px solid darken(white, 10%);
+}
+.border-top-dark {
+  border-top: 1px solid lighten(black, 25%);
+}
 @media screen and (max-width: 1100px) {
   body {
     font-size: 8px;

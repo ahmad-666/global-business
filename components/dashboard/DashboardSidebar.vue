@@ -155,7 +155,7 @@ export default {
             },
             {
               txt: 'RIO income',
-              route: '/dashboard/incomeHistory',
+              route: '/dashboard/roiIncome',
             },
           ],
         },

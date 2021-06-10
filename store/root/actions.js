@@ -32,6 +32,8 @@ export default {
           link: '/',
         },
       ],
+      referralId: 886,
+      username: 'mehrdad mola12',
     })
     vuexContext.commit('setCounterItems', {
       counterItems: [
