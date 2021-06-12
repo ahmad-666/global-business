@@ -35,7 +35,7 @@
           dark
           color="primary"
           type="submit"
-          class="text-body-2 pa-3"
+          class="text-body-2 pa-3 mt-8 mt-lg-2"
           :loading="isLoading"
           >Save</v-btn
         >

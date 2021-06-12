@@ -9,13 +9,13 @@
           justify-space-around
           align-center
           py-1
-          px-16
+          px-1 px-md-16
         "
       >
         <p class="text-body-1">Wallet Ballance:</p>
         <p class="text-body-1">{{ balance }} USD</p>
       </div>
-      <div class="inputs mt-4 d-flex align-center">
+      <div class="inputs mt-4 d-flex flex-column flex-md-row align-md-center">
         <div class="input">
           <p class="font-weight-bold grey--text text--darken-1 text-body-2">
             Transfer from wallet :
@@ -29,7 +29,7 @@
             dense
           ></v-select>
         </div>
-        <div class="input ml-5">
+        <div class="input ml-0 mt-0 ml-md-5">
           <p class="font-weight-bold grey--text text--darken-1 text-body-2">
             Value of Transfer :
           </p>
@@ -43,7 +43,7 @@
             dense
           ></v-text-field>
         </div>
-        <div class="input ml-5">
+        <div class="input ml-0 mt-0 ml-md-5">
           <p class="font-weight-bold grey--text text--darken-1 text-body-2">
             Transfer to User: :
           </p>

@@ -42,7 +42,7 @@
           :rules="[formRules.required]"
         ></v-text-field>
       </div>
-      <div class="inputs d-flex align-center">
+      <div class="inputs d-flex flex-column flex-md-row align-md-center">
         <div class="input">
           <p class="font-weight-bold text-body-2 grey--text text--darken-1">
             New Password
@@ -56,7 +56,7 @@
             :rules="[formRules.required, formRules.minLength]"
           ></v-text-field>
         </div>
-        <div class="input ml-6">
+        <div class="input ml-0 ml-md-6">
           <p class="font-weight-bold text-body-2 grey--text text--darken-1">
             Confirm Password
           </p>

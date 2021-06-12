@@ -23,7 +23,15 @@
         :page="page"
       >
         <template #top>
-          <div class="topTable d-flex justify-space-between align-center">
+          <div
+            class="
+              topTable
+              d-flex
+              flex-column flex-md-row
+              justify-md-space-between
+              align-md-center
+            "
+          >
             <div class="pageSizeSelect">
               <v-select
                 v-model="pageSize"
@@ -33,7 +41,7 @@
               ></v-select>
             </div>
 
-            <div class="filterInput">
+            <div class="filterInput mt-2 mt-md-0">
               <v-text-field
                 v-model="tableFilter"
                 outlined
@@ -45,7 +53,14 @@
         </template>
         <template #footer>
           <div
-            class="tableFooter d-flex justify-space-between align-center mt-4"
+            class="
+              tableFooter
+              d-flex
+              flex-column flex-md-row
+              justify-md-space-between
+              align-md-center
+              mt-4
+            "
           >
             <p class="font-weight-light text-body-2 flex-shrink-0">
               Showing
@@ -59,6 +74,7 @@
               v-model="page"
               :length="totalPages"
               :total-visible="5"
+              class="mt-2 mt-md-0"
             ></v-pagination>
           </div>
         </template>

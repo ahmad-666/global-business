@@ -8,6 +8,7 @@
     dark
     color="secondary"
     class="py-6 px-3 d-flex flex-column"
+    :width="getDrawerWidth"
     @input="drawerInputHandler"
   >
     <div class="user d-flex flex-column align-center">
@@ -38,6 +39,17 @@
         </v-list>
       </v-menu>
       <p class="text-caption grey--text text--darken-1">{{ username }}</p>
+      <div class="txts d-flex flex-column align-center d-md-none">
+        <p class="text-caption grey--text text--darken-1">
+          {{ navBarText1 }}
+        </p>
+        <p class="text-caption grey--text text--darken-1">
+          {{ navBarText2 }}
+        </p>
+        <p class="text-caption grey--text text--darken-1">
+          {{ navBarText3 }}
+        </p>
+      </div>
     </div>
     <div class="items">
       <v-list class="mt-4">
@@ -240,6 +252,9 @@ export default {
           },
         },
       ],
+      navBarText1: 'SZRCMS',
+      navBarText2: 'FTG886',
+      navBarText3: 'ANNOUNCEMENT : NUMBER TWO',
     }
   },
   computed: {
@@ -262,6 +277,10 @@ export default {
     },
     userId() {
       return this.$store.getters.userId
+    },
+    getDrawerWidth() {
+      if (this.$vuetify.breakpoint.mdAndUp) return '290px'
+      else return '100vw'
     },
   },
   methods: {

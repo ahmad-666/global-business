@@ -1,5 +1,5 @@
 <template>
-  <v-card dark class="px-5 pt-10 pb-5" color="secondary">
+  <v-card dark class="pa-3 px-md-5 pt-md-10 pb-md-5" color="secondary">
     <v-form ref="myForm" v-model="isFormValid" @submit.prevent="submitHandler">
       <div class="select d-flex align-center">
         <div class="left">
@@ -24,7 +24,16 @@
           </p>
         </div>
       </div>
-      <div class="inputs d-flex align-center justify-space-between mt-3">
+      <div
+        class="
+          inputs
+          d-flex
+          flex-column flex-md-row
+          align-md-center
+          justify-md-space-between
+          mt-0 mt-md-3
+        "
+      >
         <div class="input">
           <p class="text-body-2 font-weight-bold grey--text text--darken-1">
             Value
@@ -38,7 +47,7 @@
             class="mt-2"
           ></v-text-field>
         </div>
-        <div class="input ml-6">
+        <div class="input ml-0 ml-md-6">
           <p class="text-body-2 font-weight-bold grey--text text--darken-1">
             Type Your USDT Wallet
           </p>
@@ -55,7 +64,7 @@
           :loading="isLoading"
           color="primary"
           dark
-          class="py-6 px-15 text-subtitle-1"
+          class="py-3 py-md-6 px-6 px-md-15 text-subtitle-1"
           type="submit"
           >SUBMIT</v-btn
         >

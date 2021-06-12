@@ -19,8 +19,8 @@
       >
         TRANSFERS HISTORY
       </v-card-title>
-      <div class="tables px-4 pb-8 d-flex">
-        <div class="table pa-6 secondary">
+      <div class="tables px-4 pb-8 d-flex flex-column flex-lg-row">
+        <div class="table pa-6 secondary mt-4 mt-lg-0">
           <p
             class="
               pa-2
@@ -43,7 +43,7 @@
           </v-data-table>
         </div>
         <v-spacer></v-spacer>
-        <div class="table pa-6 secondary">
+        <div class="table pa-6 secondary mt-4 mt-lg-0">
           <p
             class="
               pa-2
@@ -159,5 +159,10 @@ export default {
 <style lang="scss" scoped>
 .table {
   width: 49%;
+}
+@media screen and (max-width: 1084px) {
+  .table {
+    width: 100%;
+  }
 }
 </style>

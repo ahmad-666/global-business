@@ -4,9 +4,9 @@
       Financial
     </h6>
     <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
-    <div class="d-flex content">
-      <div class="left flex-shrink-0">
-        <div class="cards">
+    <div class="d-flex content flex-column flex-md-row">
+      <div class="left flex-shrink-1 flex-md-shrink-0">
+        <div class="cards d-flex flex-row flex-md-column flex-wrap">
           <div
             v-for="financialCard in financialCards"
             :key="financialCard.title"
@@ -24,7 +24,7 @@
           ></dashboard-transfer-history>
         </div>
       </div>
-      <div class="right ml-5 mt-4 flex-grow-1">
+      <div class="right ml-0 ml-md-5 mt-4 flex-grow-1">
         <dashboard-transfer-user></dashboard-transfer-user>
       </div>
     </div>
@@ -95,6 +95,27 @@ export default {
 .content {
   .left {
     width: 35em;
+  }
+}
+@media screen and (max-width: 750px) {
+  .content {
+    .left {
+      width: 100%;
+    }
+  }
+  .cards {
+    .card {
+      width: calc((100% - (2 * 3em)) / 2);
+      margin: 1.5em;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .cards {
+    .card {
+      width: 100%;
+      margin: 1.5em;
+    }
   }
 }
 </style>

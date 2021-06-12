@@ -15,8 +15,10 @@
         ></dashboard-info-card>
       </div>
     </div>
-    <div class="content d-flex">
-      <div class="left flex-shrink-0">
+    <div
+      class="content d-flex flex-column flex-lg-row align-center align-lg-start"
+    >
+      <div class="left flex-shrink-0 flex-lg-shrink-1">
         <div class="customCard pa-4">
           <img
             src="/imgs/sezar-themes/light-blue-ltr/images/1.jpg"
@@ -57,7 +59,7 @@
           The Gateway is ACTIVE
         </p>
       </div>
-      <div class="right flex-grow-1 ml-4">
+      <div class="right flex-grow-0 flex-lg-grow-1 mt-4 ml-0 mt-lg-0 ml-lg-4">
         <v-card dark color="secondary" class="px-4 pb-12">
           <v-card-title class="font-weight-regular text-body-1"
             >Your Invoices</v-card-title
@@ -72,7 +74,15 @@
             :page="page"
           >
             <template #top>
-              <div class="topTable d-flex justify-space-between align-center">
+              <div
+                class="
+                  topTable
+                  d-flex
+                  flex-column flex-md-row
+                  justify-start justify-md-space-between
+                  align-start align-md-center
+                "
+              >
                 <div class="pageSizeSelect">
                   <v-select
                     v-model="pageSize"
@@ -97,8 +107,9 @@
                 class="
                   tableFooter
                   d-flex
-                  justify-space-between
-                  align-center
+                  flex-column flex-md-row
+                  justify-start justify-md-space-between
+                  align-start align-md-center
                   mt-4
                 "
               >
@@ -112,6 +123,7 @@
                 <v-spacer></v-spacer>
                 <v-pagination
                   v-model="page"
+                  class="mt-4 mt-md-0 ml-0 ml-md-4"
                   :length="totalPages"
                   :total-visible="5"
                 ></v-pagination>
@@ -196,6 +208,7 @@ export default {
           value: 'status',
           sortable: true,
           align: 'start',
+          width: '16em',
         },
       ],
       pageSize: 10, // set init value for v-model
@@ -260,9 +273,23 @@ export default {
   width: calc((100% - (3 * 3em)) / 3);
   margin: 1.5em;
 }
+@media screen and (max-width: 750px) {
+  .card {
+    width: 100%;
+    margin: 1.5em 0;
+  }
+}
 .content {
   .left {
     width: 45em;
+  }
+}
+@media screen and (max-width: 1084px) {
+  .content {
+    .left,
+    .right {
+      width: 100%;
+    }
   }
 }
 .customCard {
@@ -275,6 +302,7 @@ export default {
     left: 0;
     top: 0;
     z-index: 1;
+    object-fit: cover;
   }
   .content {
     position: relative;
@@ -286,16 +314,16 @@ export default {
     outline: 1px solid royalblue;
   }
 }
-.pageSizeSelect {
-  width: 10em;
-}
-.filterInput {
-  width: 30em;
-}
-.tableFooter {
-  width: 100%;
-}
-.statusText {
-  max-width: 10em;
-}
+// .pageSizeSelect {
+//   width: 10em;
+// }
+// .filterInput {
+//   width: 30em;
+// }
+// .tableFooter {
+//   width: 100%;
+// }
+// .statusText {
+//   max-width: 10em;
+// }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-4">
+  <v-card class="notification pa-4">
     <p class="primary--text text-capitalize text-body-2">
       {{ ticketNum }} open ticket
     </p>
@@ -25,4 +25,8 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+// .notification {
+//   width: 80em;
+// }
+</style>

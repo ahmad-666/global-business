@@ -6,10 +6,18 @@
     dark
     @submit.prevent="submitHandler"
   >
-    <div class="d-flex justify-space-between align-center section">
+    <div
+      class="
+        d-flex
+        flex-column flex-lg-row
+        justify-lg-space-between
+        align-lg-center
+        section
+      "
+    >
       <div class="swapWallet flex-shrink-0">
         <p class="text-capitalize grey--text text-subtitle-2 font-weight-bold">
-          Swap from wallet :
+          Swap from wallet:
         </p>
         <v-select
           v-model="selectedUnit"
@@ -25,21 +33,21 @@
         class="
           balance
           flex-grow-1
-          mx-10
+          mx-0 mx-lg-5 mx-xl-10
           primary
           py-1
-          px-15
+          px-4 px-xl-15
           d-flex
           justify-space-between
           white--text
           text-body-2
-          mt-2
+          mt-0 mt-lg-2
         "
       >
         <p class="text-capitalize font-weight-light">wallet balance:</p>
         <p class="ml-2 font-weight-light">{{ convertedBalance }} USD</p>
       </div>
-      <div class="valueSwap flex-shrink-0">
+      <div class="valueSwap flex-shrink-0 mt-4 mt-lg-0">
         <p class="text-capitalize grey--text text-subtitle-2 font-weight-bold">
           Value of Swap:
         </p>

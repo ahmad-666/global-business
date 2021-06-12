@@ -4,7 +4,7 @@
       Dashboard
     </h6>
     <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
-    <div class="content d-flex">
+    <div class="content d-flex flex-column flex-lg-row">
       <div class="left flex-shrink-1">
         <v-img
           src="imgs/sezar-themes/light-blue-ltr/images/photo_2020-12-31_22-03-42.jpg"
@@ -23,8 +23,10 @@
           ></dashboard-profile-card>
         </div>
       </div>
-      <div class="right flex-shrink-2 ml-6 flex-grow-1">
-        <div class="cards d-flex flex-row align-stretch flex-wrap">
+      <div class="right flex-shrink-2 ml-0 ml-lg-6 flex-grow-1">
+        <div
+          class="cards d-flex flex-column flex-md-row align-stretch flex-wrap"
+        >
           <div v-for="card in infoCards" :key="card.title" class="card">
             <dashboard-info-card
               :title="card.title"
@@ -42,14 +44,18 @@
         </div>
       </div>
     </div>
-    <div class="links d-flex mt-10">
+    <div class="links d-flex flex-column flex-md-row mt-10">
       <v-card dark class="px-4 flex-grow-1" color="secondary">
         <v-card-title class="text-subtitle-1 font-weight-regular"
           >Your Left Binary Link</v-card-title
         >
         <v-text-field outlined :value="leftLink" dense disabled></v-text-field>
       </v-card>
-      <v-card dark class="px-4 flex-grow-1 ml-4" color="secondary">
+      <v-card
+        dark
+        class="px-4 flex-grow-1 mt-4 mt-md-0 ml-0 ml-md-4"
+        color="secondary"
+      >
         <v-card-title class="text-subtitle-1 font-weight-regular"
           >Your Right Binary Link</v-card-title
         >
@@ -163,8 +169,8 @@ export default {
     ]
     this.archiveDates = [
       '2021/01/01 08:57:08',
-      '2021/01/01 08:57:08',
-      '2021/01/01 08:57:08',
+      '2021/01/02 08:57:08',
+      '2021/01/03 08:57:08',
     ]
     this.incomeLimit = 855
     this.roiProfit = 58.05
@@ -201,5 +207,11 @@ export default {
 .card {
   width: calc((100% - (2 * 3em)) / 2);
   margin: 1.5em;
+}
+@media screen and (max-width: 750px) {
+  .card {
+    width: 100%;
+    margin: 1.5em 0;
+  }
 }
 </style>

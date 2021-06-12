@@ -15,8 +15,23 @@
         :page="page"
       >
         <template #top>
-          <div class="topTable d-flex justify-space-between">
-            <div class="left pageSizeSelect d-flex align-center">
+          <div
+            class="
+              topTable
+              d-flex
+              flex-column flex-md-row
+              justify-md-space-between
+            "
+          >
+            <div
+              class="
+                left
+                pageSizeSelect
+                d-flex
+                flex-column flex-md-row
+                align-md-center
+              "
+            >
               <v-select
                 v-model="pageSize"
                 :items="pages"
@@ -28,11 +43,11 @@
                 outlined
                 label="filter table rows"
                 dense
-                class="ml-6"
+                class="ml-0 ml-md-6"
               ></v-text-field>
             </div>
 
-            <div class="right btns">
+            <div class="right btns mb-4 mb-md-0">
               <v-btn
                 dark
                 color="teal accent-4"
@@ -45,7 +60,14 @@
         </template>
         <template #footer>
           <div
-            class="tableFooter d-flex justify-space-between align-center mt-4"
+            class="
+              tableFooter
+              d-flex
+              flex-column flex-md-row
+              justify-md-space-between
+              align-md-center
+              mt-4
+            "
           >
             <p class="font-weight-light text-body-2 flex-shrink-0">
               Showing
@@ -57,6 +79,7 @@
             <v-spacer></v-spacer>
             <v-pagination
               v-model="page"
+              class="mt-4 mt-md-0"
               :length="totalPages"
               :total-visible="5"
             ></v-pagination>

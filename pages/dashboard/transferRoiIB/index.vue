@@ -4,8 +4,16 @@
       Financial
     </h6>
     <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
-    <div class="d-flex content">
-      <div class="left flex-shrink-0">
+    <div class="d-flex flex-column flex-lg-row content">
+      <div
+        class="
+          left
+          flex-shrink-1 flex-lg-shrink-0
+          d-flex
+          flex-row flex-wrap
+          d-lg-block
+        "
+      >
         <div
           v-for="financialCard in financialCards"
           :key="financialCard.title"
@@ -17,7 +25,7 @@
           ></dashboard-financial-card>
         </div>
       </div>
-      <div class="right flex-grow-1 ml-5 mt-4">
+      <div class="right flex-grow-1 ml-0 mt-4 ml-lg-5 mt-lg-4">
         <dashboard-financial-swap></dashboard-financial-swap>
       </div>
     </div>
@@ -109,6 +117,26 @@ export default {
 .content {
   .left {
     width: 35em;
+  }
+}
+@media screen and (max-width: 1084px) {
+  .content {
+    .left {
+      width: 100%;
+      .card {
+        width: calc((100% - (3 * 3em)) / 3);
+        margin: 1.5em;
+      }
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .content {
+    .left {
+      .card {
+        width: 100%;
+      }
+    }
   }
 }
 </style>

@@ -119,4 +119,22 @@ export default {
   width: calc((100% - (4 * 3em)) / 4);
   margin: 1.5em;
 }
+@media screen and (max-width: 1084px) {
+  .card {
+    width: calc((100% - (3 * 3em)) / 3);
+    margin: 1.5em;
+  }
+}
+@media screen and (max-width: 750px) {
+  .card {
+    width: calc((100% - (2 * 3em)) / 2);
+    margin: 1.5em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+    margin: 1.5em;
+  }
+}
 </style>

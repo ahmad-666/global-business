@@ -5,7 +5,7 @@
       :is-sidebar-open="isSidebarOpen"
       @drawerInput="drawerInputHandler"
     ></dashboard-sidebar>
-    <v-main class="px-8 py-16">
+    <v-main class="px-2 px-lg-4 px-xl-8 py-16">
       <Nuxt />
     </v-main>
   </v-app>

@@ -4,11 +4,13 @@
       Users
     </h6>
     <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
-    <div class="content d-flex">
-      <div class="left flex-shrink-0">
+    <div
+      class="content d-flex flex-column flex-lg-row align-center align-lg-start"
+    >
+      <div class="left flex-shrink-1 flex-lg-shrink-0">
         <dashboard-profile-avatar></dashboard-profile-avatar>
       </div>
-      <div class="right ml-5 flex-grow-1">
+      <div class="right ml-0 ml-lg-5 mt-5 mt-lg-0 flex-grow-1">
         <dashboard-change-password></dashboard-change-password>
         <div class="mt-6">
           <dashboard-2-f-a></dashboard-2-f-a>
@@ -46,6 +48,16 @@ export default {
 .content {
   .left {
     width: 40em;
+  }
+}
+@media screen and (max-width: 1084px) {
+  .content {
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 100%;
+    }
   }
 }
 </style>
