@@ -52,6 +52,7 @@ export default {
     HomeBlogs,
     BaseComments,
   },
+  layout: 'Home',
   computed: {
     comments() {
       return this.$store.getters.comments
