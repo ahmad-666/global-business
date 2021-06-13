@@ -15,7 +15,8 @@
     </header>
     <Nuxt />
     <particle-container></particle-container>
-    <base-footer></base-footer>
+    <!-- <base-footer></base-footer> -->
+    <index-footer></index-footer>
     <footer-bottom></footer-bottom>
     <div v-if="showRegister" class="signup">
       <base-register
@@ -47,7 +48,7 @@
 </template>
 <script>
 import BaseSlider from '~/components/slider/BaseSlider.vue'
-import BaseFooter from '~/components/footer/BaseFooter.vue'
+// import BaseFooter from '~/components/footer/BaseFooter.vue'
 import FooterBottom from '~/components/footer/FooterBottom.vue'
 import ParticleContainer from '~/components/ParticleContainer.vue'
 import BaseRegister from '~/components/BaseRegister.vue'
@@ -55,9 +56,11 @@ import BaseLogin from '~/components/BaseLogin.vue'
 import BaseForgetPassword from '~/components/BaseForgetPassword.vue'
 import NavBar from '~/components/header/NavBar.vue'
 import TopHeader from '~/components/header/TopHeader.vue'
+import IndexFooter from '~/components/footer/IndexFooter.vue'
 export default {
   components: {
-    BaseFooter,
+    // BaseFooter,
+    IndexFooter,
     FooterBottom,
     ParticleContainer,
     BaseRegister,

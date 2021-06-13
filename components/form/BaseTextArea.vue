@@ -70,6 +70,9 @@ export default {
         case 'white-bg':
           typeClass.whiteBg = true
           break
+        case 'footer-elm':
+          typeClass.footerElm = true
+          break
       }
       return typeClass
     },
@@ -107,6 +110,17 @@ export default {
     background-color: inherit;
     &::placeholder {
       color: lighten(black, 50%);
+    }
+  }
+}
+.footerElm {
+  background-color: rgba(15, 66, 105, 0.6);
+  border: 1px solid darken(white, 30%);
+  textarea {
+    color: white;
+    background-color: inherit;
+    &::placeholder {
+      color: darken(white, 20%);
     }
   }
 }
