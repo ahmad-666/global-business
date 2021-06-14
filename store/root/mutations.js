@@ -12,6 +12,7 @@ export default {
       username,
       avatarImgSrc,
       userId,
+      identifierId,
     } = payload
     state.tel = tel
     state.telTime = telTime
@@ -24,6 +25,7 @@ export default {
     state.username = username
     state.avatarImgSrc = avatarImgSrc
     state.userId = userId
+    state.identifierId = identifierId
   },
   setCounterItems(state, payload) {
     state.counterItems = payload.counterItems

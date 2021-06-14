@@ -38,4 +38,7 @@ export default {
   userId(state) {
     return state.userId
   },
+  identifierId(state) {
+    return state.identifierId
+  },
 }

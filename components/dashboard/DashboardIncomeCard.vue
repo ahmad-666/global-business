@@ -1,11 +1,15 @@
 <template>
-  <v-card dark class="secondary pa-0 py-4">
+  <v-card
+    dark
+    class="secondary pa-0 py-4"
+    :class="{ redBorder: type === 'red', greenBorder: type === 'green' }"
+  >
     <v-progress-circular
       class="mx-auto d-flex"
       rotate="270"
       size="140"
       width="10"
-      color="orange darken-2"
+      :color="type === 'green' ? 'success' : 'error'"
       :value="progressValue"
     >
       <p class="text-h4 font-weight-bold">{{ progressValue }}%</p>
@@ -47,6 +51,10 @@ export default {
       type: Number,
       required: true,
     },
+    type: {
+      type: String,
+      required: true,
+    },
     daysLeft: {
       type: Number,
       required: true,
@@ -77,4 +85,11 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.redBorder {
+  border: 4px solid crimson !important;
+}
+.greenBorder {
+  border: 4px solid rgb(6, 162, 6) !important;
+}
+</style>

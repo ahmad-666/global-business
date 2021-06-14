@@ -16,6 +16,7 @@ export const state = () => {
     username: '',
     avatarImgSrc: '',
     userId: '',
+    identifierId: '',
   }
 }
 

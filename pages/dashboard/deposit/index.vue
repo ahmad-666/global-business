@@ -40,6 +40,7 @@
                 myBtn
                 d-flex
               "
+              @click="depositHandler"
               >Deposit</v-btn
             >
           </div>
@@ -264,6 +265,11 @@ export default {
     },
     endText() {
       return (this.page - 1) * this.pageSize + this.pageSize
+    },
+  },
+  methods: {
+    depositHandler() {
+      this.$router.push('/dashboard/wallet')
     },
   },
 }

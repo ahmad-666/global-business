@@ -4,6 +4,7 @@
       <div class="slider">
         <base-slider></base-slider>
       </div>
+
       <div class="content">
         <div class="topHeader">
           <top-header></top-header>
@@ -13,6 +14,9 @@
         </div>
       </div>
     </header>
+    <div class="carousel">
+      <units-carousel></units-carousel>
+    </div>
     <Nuxt />
     <particle-container></particle-container>
     <!-- <base-footer></base-footer> -->
@@ -57,6 +61,7 @@ import BaseForgetPassword from '~/components/BaseForgetPassword.vue'
 import NavBar from '~/components/header/NavBar.vue'
 import TopHeader from '~/components/header/TopHeader.vue'
 import IndexFooter from '~/components/footer/IndexFooter.vue'
+import UnitsCarousel from '~/components/slider/UnitsCarousel.vue'
 export default {
   components: {
     // BaseFooter,
@@ -69,6 +74,7 @@ export default {
     BaseSlider,
     NavBar,
     TopHeader,
+    UnitsCarousel,
   },
   provide() {
     return {

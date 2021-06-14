@@ -37,6 +37,7 @@ export default {
       avatarImgSrc:
         '/imgs/sezar-themes/light-blue-ltr/images/default-avatar.png',
       userId: 'fxtg4',
+      identifierId: 'FTG886',
     })
     vuexContext.commit('setCounterItems', {
       counterItems: [
