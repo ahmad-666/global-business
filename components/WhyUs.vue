@@ -119,7 +119,7 @@ export default {
       margin-top: 4em;
       img {
         display: block;
-        max-width: 95vw;
+        width: auto;
         height: 50em;
         margin: 0 auto;
       }
