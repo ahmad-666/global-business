@@ -72,11 +72,18 @@
             <li>
               <nuxt-link to="/" class="link">Home</nuxt-link>
             </li>
-            <li>
+            <!-- <li>
               <nuxt-link to="/about" class="link">About Us</nuxt-link>
-            </li>
+            </li> -->
+
             <li>
               <nuxt-link to="/services" class="link">Services</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/support" class="link">Support</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/pricing" class="link">Pricing</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/faqs" class="link">Faqs </nuxt-link>

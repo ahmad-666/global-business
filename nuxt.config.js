@@ -63,6 +63,8 @@ export default {
               textColor: '#888',
               bgColor: '#f5f5f5',
               success: '#0ea704',
+              adminBackgroundColor: '#1E1E28',
+              adminCardColor: '#27293D',
             },
           },
         },
