@@ -78,6 +78,31 @@ body .v-application p {
 .v-list-item__subtitle {
   white-space: initial !important;
 }
+.container {
+  max-width: initial !important;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.width-100 {
+  width: 100%;
+}
+.position-relative {
+  position: relative !important;
+}
+.position-absolute {
+  position: absolute !important;
+}
+.absolute-center {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+.price-edit-form {
+  .v-label {
+    font-size: 12px !important;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   body {

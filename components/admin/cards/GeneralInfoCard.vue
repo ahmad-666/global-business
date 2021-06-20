@@ -1,32 +1,33 @@
 <template>
-  <v-card color="cardColor" class="pa-4 pb-0">
-    <v-card-text class="d-flex justify-space-between align-center pa-0 pb-8">
+  <v-card color="adminCardColor" class="pa-4 rounded-lg">
+    <v-card-text class="d-flex justify-space-between align-center pa-0">
       <div
         class="icon rounded-circle d-flex justify-center align-center"
         :style="{ backgroundImage: iconGradient }"
       >
         <v-icon size="20" color="white">{{ icon }}</v-icon>
       </div>
-      <div>
+      <div class="d-flex flex-column align-end">
         <p
-          class="text-body-2 textColor--text font-weight-light text-capitalize"
+          class="
+            text-caption
+            grey--text
+            text--lighten-1
+            font-weight-light
+            text-capitalize
+          "
         >
           {{ title }}
         </p>
-        <p class="text-h5 titleColor--text font-weight-light">
-          {{ value }}
-        </p>
+        <p class="text-h5 white--text">{{ value }}</p>
       </div>
     </v-card-text>
-    <v-card-actions class="py-2 px-0 border-top-light">
-      <nuxt-link :to="actionLink">
-        <v-btn text class="d-flex align-center textColor--text">
-          <v-icon size="12">{{ subIcon }}</v-icon>
-          <p class="ml-2 text-capitalize text-caption font-weight-light">
-            {{ actionText }}
-          </p>
-        </v-btn>
-      </nuxt-link>
+    <v-divider v-if="actionText" dark class="mt-6 mb-2"></v-divider>
+    <v-card-actions v-if="actionText" class="pa-0">
+      <v-btn text class="d-flex align-center grey--text text-lighten-1">
+        <v-icon size="12">{{ actionIcon }}</v-icon>
+        <p class="ml-2 text-caption text-capitalize">{{ actionText }}</p>
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -42,22 +43,18 @@ export default {
       required: true,
     },
     value: {
-      type: String,
-      required: true,
-    },
-    subIcon: {
-      type: String,
-      required: true,
-    },
-    actionText: {
-      type: String,
+      type: [Number, String],
       required: true,
     },
     iconGradient: {
       type: String,
-      default: 'linear-gradient(to bottom left,#ff8d72,#ff6491,#ff8d72)',
+      required: true,
     },
-    actionLink: {
+    actionIcon: {
+      type: String,
+      default: '',
+    },
+    actionText: {
       type: String,
       default: '',
     },
