@@ -19,7 +19,7 @@
       }"
     >
       <Nuxt />
-      <div class="d-flex align-center justify-end">
+      <div class="d-flex align-center justify-end my-6">
         <p class="text-caption white--text">@ {{ new Date().getFullYear() }}</p>
         <p class="text-caption primary--text ml-1">Global Business</p>
         <p class="text-caption white--text ml-1">all rights reserved</p>

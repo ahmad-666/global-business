@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <v-card color="adminCardColor" dark class="pa-4">
+  <div class="users-table">
+    <v-card color="adminCardColor" dark class="pa-4 mt-4">
       <v-data-table
+        v-model="selectedUsers"
         :items="users"
         :headers="usersHeaders"
         :search="tableFilter"
@@ -9,7 +10,9 @@
         :hide-default-footer="true"
         :page="page"
         class="transparent"
+        show-select
       >
+        >
         <template #top>
           <v-container>
             <v-row>
@@ -38,7 +41,7 @@
         </template>
         <template #footer>
           <v-container>
-            <v-row>
+            <v-row align="center">
               <v-col cols="12" md="4" lg="3">
                 <p class="font-weight-light text-body-2 flex-shrink-0">
                   Showing
@@ -60,6 +63,24 @@
             </v-row>
           </v-container>
         </template>
+        <template #header.data-table-select>
+          <div></div>
+        </template>
+        <template #item.data-table-select="slotProps">
+          <v-checkbox
+            v-model="selectedUsers"
+            color="cyan"
+            :value="slotProps.item"
+          ></v-checkbox>
+        </template>
+        <template #item.avatar="slotProps">
+          <v-img
+            width="4em"
+            height="4em"
+            class="rounded-circle"
+            :src="slotProps.value"
+          ></v-img>
+        </template>
       </v-data-table>
     </v-card>
   </div>
@@ -73,6 +94,7 @@ export default {
   layout: 'admin',
   data() {
     return {
+      selectedUsers: [],
       tableFilter: '',
       page: 1,
       pageSize: 10,
@@ -116,7 +138,7 @@ export default {
     for (let i = 0; i < 100; i++) {
       this.users[i] = {}
       this.users[i].id = i
-      this.users[i].avatar = '/imgs/profile.png'
+      this.users[i].avatar = '/imgs/default-avatar.png'
       this.users[i].phone = '+123 456 789'
       this.users[i].username = 'gb714580'
       this.users[i].email = 'something@gmail.com'

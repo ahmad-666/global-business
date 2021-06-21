@@ -27,6 +27,10 @@ export default {
       type: Number,
       default: 100,
     },
+    showLegend: {
+      type: Boolean,
+      default: true,
+    },
   },
   mounted() {
     const ctx = this.$refs.canvas.getContext('2d')
@@ -42,12 +46,16 @@ export default {
       {
         responsive: true,
         maintainAspectRatio: false,
+        legend: {
+          display: this.showLegend,
+        },
+
         scales: {
           yAxes: [
             {
               ticks: {
-                max: this.yMin,
-                min: this.yMax,
+                suggestedMax: this.yMax,
+                suggestedMin: this.yMin,
               },
             },
           ],

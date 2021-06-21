@@ -18,7 +18,7 @@
     :expand-on-hover="!showSidebar && !isMobile"
   >
     <nuxt-link to="/admin" class="d-flex align-center">
-      <img src="imgs/logo.png" alt="imgs/logo.png" class="logo" />
+      <img src="/imgs/logo.png" alt="imgs/logo.png" class="logo" />
       <p class="text-body-1 white--text ml-4">GLOBAL BUSINESS</p>
     </nuxt-link>
     <v-list>
