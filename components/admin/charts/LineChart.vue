@@ -33,6 +33,7 @@ export default {
     },
   },
   mounted() {
+    this.$refs.canvas.style.height = '20em'
     const ctx = this.$refs.canvas.getContext('2d')
     const gradient = ctx.createLinearGradient(0, 0, 0, 400)
     gradient.addColorStop(0, this.gradient1)

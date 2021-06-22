@@ -135,7 +135,7 @@
             </template>
             <template #[`item.status`]="{ item }">
               <p
-                v-if="item.status === 'confirmed payment'"
+                v-if="item.status === 'confirmed'"
                 class="
                   text-caption
                   pa-1
@@ -149,7 +149,7 @@
                 {{ item.status }}
               </p>
               <p
-                v-else
+                v-else-if="item.status === 'unconfirmed'"
                 class="
                   text-caption
                   pa-1
@@ -157,6 +157,20 @@
                   rounded-l
                   white--text
                   error
+                  statusText
+                "
+              >
+                {{ item.status }}
+              </p>
+              <p
+                v-else
+                class="
+                  text-caption
+                  pa-1
+                  text-center
+                  rounded-l
+                  white--text
+                  warning
                   statusText
                 "
               >
@@ -248,8 +262,13 @@ export default {
       this.invoicesData[i].id = i
       this.invoicesData[i].taxId = 'INVOICE_UH1580154401'
       this.invoicesData[i].price = +(Math.random() * 1000).toFixed(3)
+      const randVal = Math.random()
       this.invoicesData[i].status =
-        Math.random() < 0.5 ? 'confirmed payment' : 'unconfirmed'
+        randVal < 0.33
+          ? 'unconfirmed'
+          : (randVal > 0.33) & (randVal < 0.66)
+          ? 'confirmed'
+          : 'pending'
     }
     this.invoicesTotalLength = this.invoicesData.length
   },

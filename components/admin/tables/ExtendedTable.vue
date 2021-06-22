@@ -1,7 +1,7 @@
 <template>
-  <v-card color="cardColor" class="pa-4">
+  <v-card color="adminCardColor" class="pa-4">
     <v-card-title
-      class="pa-0 titleColor--text text-subtitle-1 font-weight-bold"
+      class="pa-0 white--text text-subtitle-1 font-weight-bold text-capitalize"
       >{{ title }}</v-card-title
     >
     <v-data-table
@@ -12,6 +12,7 @@
       :hide-default-footer="true"
       :page="page"
       class="mt-4 transparent"
+      dark
     >
       <template #top>
         <div

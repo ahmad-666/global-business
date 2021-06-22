@@ -24,13 +24,22 @@
           ></general-info-card>
         </v-col>
         <v-col cols="12" sm="6" lg="4">
-          <link-generator-card
-            :title="linkGenerator.title"
-            :value="linkGenerator.value"
-            :icon="linkGenerator.icon"
-            :left-link="linkGenerator.leftLink"
-            :right-link="linkGenerator.rightLink"
-          ></link-generator-card>
+          <v-card color="adminCardColor">
+            <v-card-title class="white--text text-subtitle-1"
+              >Investments</v-card-title
+            >
+            <v-card-text>
+              <line-chart
+                :gradient1="chartConfig.gradient1"
+                :gradient2="chartConfig.gradient2"
+                :labels="chartConfig.labels"
+                :datasets="chartConfig.datasets"
+                :y-min="chartConfig.yMin"
+                :y-max="chartConfig.yMax"
+                :show-legend="false"
+              ></line-chart>
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -39,19 +48,23 @@
 <script>
 import CappingCard from '~/components/admin/cards/CappingCard.vue'
 import GeneralInfoCard from '~/components/admin/cards/GeneralInfoCard.vue'
-import LinkGeneratorCard from '~/components/admin/cards/LinksGenerateCard.vue'
+// import LinkGeneratorCard from '~/components/admin/cards/L//inksGenerateCard.vue'
+import LineChart from '~/components/admin/charts/LineChart.vue'
 export default {
   components: {
     CappingCard,
     GeneralInfoCard,
-    LinkGeneratorCard,
+    // LinkGeneratorCard,
+    LineChart,
   },
   layout: 'admin',
   data() {
     return {
       cappingCard: {},
       infoCards: [],
-      linkGenerator: {},
+      // linkGenerator: {},
+      investmentsData: [],
+      chartConfig: {},
     }
   },
   fetch() {
@@ -101,12 +114,29 @@ export default {
         iconGradient: 'linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3)',
       },
     ]
-    this.linkGenerator = {
-      title: 'target user',
-      value: 0,
-      icon: '/imgs/target-users.png',
-      leftLink: 'http://globalbusiness724.com/page/signup?ref=rlwlvXSA',
-      rightLink: 'http://globalbusiness724.com/page/signup?ref=rlwlvXSA',
+    // this.linkGenerator = {
+    //   title: 'target user',
+    //   value: 0,
+    //   icon: '/imgs/target-users.png',
+    //   leftLink: 'http://globalbusiness724.com/page/signup?ref=rlwlvXSA',
+    //   rightLink: 'http://globalbusiness724.com/page/signup?ref=rlwlvXSA',
+    // }
+    this.investmentsData = [80, 100, 70, 80, 110, 80]
+    this.chartConfig = {
+      gradient1: `${this.$vuetify.theme.themes.light.primary}55`,
+      gradient2: 'transparent',
+      datasets: [
+        {
+          label: '',
+          borderColor: this.$vuetify.theme.themes.light.primary,
+          data: this.investmentsData,
+          fill: 'start',
+          borderWidth: 2,
+        },
+      ],
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      yMin: Math.min(...this.investmentsData) - 10,
+      yMax: Math.max(...this.investmentsData) + 10,
     }
   },
 }
