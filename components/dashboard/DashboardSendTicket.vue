@@ -5,7 +5,7 @@
       dense
       :rules="[formRules.required]"
       placeholder="Subject"
-      background-color="secondary lighten-1"
+      :background-color="getBgColor"
       dark
       outlined
       class="pa-2"
@@ -18,9 +18,25 @@
       dense
       :rules="[formRules.required]"
       placeholder="Your Ticket Message..."
-      background-color="secondary lighten-1"
+      :background-color="getBgColor"
       height="20em"
     ></v-textarea>
+    <div :style="{ width: '40em' }" class="file-input">
+      <v-file-input
+        label="attach file"
+        accept="image/*"
+        dense
+        :light="!isDark"
+        :dark="isDark"
+        outlined
+        background-color="teal"
+        color="white"
+        show-size
+        chips
+        clearable
+      ></v-file-input>
+    </div>
+
     <div class="d-flex flex-row-reverse">
       <v-btn
         :loading="isLoading"
@@ -35,6 +51,12 @@
 </template>
 <script>
 export default {
+  props: {
+    isDark: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       isLoading: false,
@@ -50,6 +72,10 @@ export default {
           if (!val || !val.trim().length) return 'field is required'
         },
       }
+    },
+    getBgColor() {
+      if (!this.isDark) return 'secondary lighten-1'
+      else return 'adminCardColor'
     },
   },
   methods: {

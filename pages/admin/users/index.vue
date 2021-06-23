@@ -33,7 +33,7 @@
                 ></v-select>
               </v-col>
               <v-spacer></v-spacer>
-              <v-col cols="12" md="4" lg="3">
+              <v-col cols="12" md="5" lg="4">
                 <table-interaction></table-interaction>
               </v-col>
             </v-row>

@@ -115,6 +115,11 @@
             {{ item.status }}
           </p>
         </template>
+        <template #item.subject="slotProps">
+          <nuxt-link :to="`/dashboard/tickets/${slotProps.item.id}`">{{
+            slotProps.value
+          }}</nuxt-link>
+        </template>
       </v-data-table>
     </v-card>
   </div>

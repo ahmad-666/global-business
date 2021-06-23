@@ -47,7 +47,11 @@
           exact-active-class="activeClass"
         >
           <v-list-item-icon>
-            <v-icon size="15">{{ sidebarItem.icon }}</v-icon>
+            <v-icon
+              size="15"
+              :class="{ 'primary--text': isListOpen(sidebarItem.items) }"
+              >{{ sidebarItem.icon }}</v-icon
+            >
           </v-list-item-icon>
           <v-list-item-content class="ml-2">
             <v-list-item-title>
@@ -212,6 +216,21 @@ export default {
           icon: 'fas fa-cog',
           route: '/admin/settings',
         },
+        {
+          id: 10,
+          text: 'tickets',
+          icon: 'fas fa-ticket-alt',
+          items: [
+            {
+              text: 'all tickets',
+              route: '/admin/tickets',
+            },
+            {
+              text: 'send ticket',
+              route: '/admin/sendTicket',
+            },
+          ],
+        },
       ],
       mobileShowSidebar: false,
     }
@@ -253,7 +272,7 @@ export default {
   height: 3em;
 }
 .activeClass {
-  color: #d1a316;
+  color: #d1a316 !important;
   position: relative;
   &::before {
     display: none;

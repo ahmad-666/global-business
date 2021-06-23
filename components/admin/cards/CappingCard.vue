@@ -28,7 +28,7 @@
             class="capping-card-list-item"
           >
             <v-list-item-icon>
-              <v-icon size="4" color="cyan accent-2" class="my-2"
+              <v-icon size="4" color="cyan accent-2" class="my-2 list-icon"
                 >fas fa-circle</v-icon
               >
             </v-list-item-icon>
@@ -90,5 +90,9 @@ export default {
 }
 .capping-card-list-item {
   min-height: initial !important;
+}
+.list-icon {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 </style>

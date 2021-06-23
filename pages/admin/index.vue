@@ -43,6 +43,92 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container>
+      <v-row>
+        <v-col cols="12" lg="6">
+          <v-card color="adminCardColor">
+            <v-card-title class="d-flex align-center justify-space-between">
+              <p class="text-subtitle-1 white--text font-weight-medium">
+                Latest Users
+              </p>
+              <nuxt-link to="/admin/users">
+                <v-btn color="primary" class="py-3 px-6" dark>All Users</v-btn>
+              </nuxt-link>
+            </v-card-title>
+            <v-card-text>
+              <v-data-table
+                dark
+                class="transparent"
+                :items="usersData"
+                :headers="usersHeaders"
+                hide-default-footer
+              >
+                <template #item.avatar="slotProps">
+                  <v-avatar size="50" class="my-2">
+                    <v-img
+                      :src="slotProps.value"
+                      width="100%"
+                      height="100%"
+                    ></v-img>
+                  </v-avatar>
+                </template>
+              </v-data-table>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12" lg="6">
+          <v-card color="adminCardColor">
+            <v-card-title class="d-flex align-center justify-space-between">
+              <p class="text-subtitle-1 white--text font-weight-medium">
+                Latest Invest History
+              </p>
+              <nuxt-link to="/admin/investHistory">
+                <v-btn color="primary" class="py-3 px-6" dark
+                  >All Transactions</v-btn
+                >
+              </nuxt-link>
+            </v-card-title>
+            <v-card-text>
+              <v-data-table
+                dark
+                class="transparent"
+                :items="investHistoryData"
+                :headers="investHeaders"
+                hide-default-footer
+              >
+                <template #item.user="slotProps">
+                  <p>{{ slotProps.value.split(' ')[0] }}</p>
+                  <p>{{ slotProps.value.split(' ')[1] }}</p>
+                </template>
+                <template #item.status="slotProps">
+                  <nuxt-link :to="`/admin/depositMessage/${slotProps.item.id}`">
+                    <v-chip
+                      v-if="slotProps.value === 'rejected'"
+                      color="error"
+                      class="cursor-pointer"
+                      >rejected</v-chip
+                    >
+                    <v-chip
+                      v-else-if="slotProps.value === 'accepted'"
+                      color="success"
+                      class="cursor-pointer"
+                      >accepted</v-chip
+                    >
+                    <v-chip
+                      v-else-if="slotProps.value === 'pending'"
+                      color="warning"
+                      class="cursor-pointer"
+                      >pending</v-chip
+                    >
+                  </nuxt-link>
+                </template>
+              </v-data-table>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-form @submit.prevent="submitHandler"></v-form>
   </div>
 </template>
 <script>
@@ -50,6 +136,7 @@ import CappingCard from '~/components/admin/cards/CappingCard.vue'
 import GeneralInfoCard from '~/components/admin/cards/GeneralInfoCard.vue'
 // import LinkGeneratorCard from '~/components/admin/cards/L//inksGenerateCard.vue'
 import LineChart from '~/components/admin/charts/LineChart.vue'
+
 export default {
   components: {
     CappingCard,
@@ -65,6 +152,60 @@ export default {
       // linkGenerator: {},
       investmentsData: [],
       chartConfig: {},
+      usersData: [], // only 10 last user
+      usersHeaders: [
+        {
+          text: 'AVATAR',
+          value: 'avatar',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'USERNAME',
+          value: 'username',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'PHONE',
+          value: 'phone',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'EMAIL',
+          value: 'email',
+          sortable: false,
+          align: 'start',
+        },
+      ],
+      investHistoryData: [], // only 10 last tranactions
+      investHeaders: [
+        {
+          text: 'VALUE',
+          value: 'value',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'USER',
+          value: 'user',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'DATE',
+          value: 'date',
+          sortable: false,
+          align: 'start',
+        },
+        {
+          text: 'STATUS',
+          value: 'status',
+          sortable: false,
+          align: 'start',
+        },
+      ],
     }
   },
   fetch() {
@@ -137,6 +278,27 @@ export default {
       labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
       yMin: Math.min(...this.investmentsData) - 10,
       yMax: Math.max(...this.investmentsData) + 10,
+    }
+    for (let i = 0; i < 10; i++) {
+      this.usersData[i] = {}
+      this.usersData[i].avatar = '/imgs/default-avatar.png'
+      this.usersData[i].phone = '+123 456 789'
+      this.usersData[i].email = 'something@gmail.com'
+      this.usersData[i].username = 'username'
+    }
+    for (let i = 0; i < 10; i++) {
+      this.investHistoryData[i] = {}
+      this.investHistoryData[i].id = i
+      this.investHistoryData[i].value = `$${(Math.random() * 100).toFixed(2)}`
+      this.investHistoryData[i].user = 'FTG10024 ft100'
+      this.investHistoryData[i].date = new Date().toDateString()
+      const randVal = Math.random()
+      this.investHistoryData[i].status =
+        randVal < 0.33
+          ? 'accepted'
+          : (randVal > 0.33) & (randVal < 0.66)
+          ? 'rejected'
+          : 'pending'
     }
   },
 }

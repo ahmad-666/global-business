@@ -1,5 +1,13 @@
 <template>
-  <div class="d-flex align-center">
+  <div class="d-flex align-center flex-wrap justify-start justify-md-end">
+    <v-tooltip light>
+      <template #activator="{ on, attrs }">
+        <v-btn text v-bind="attrs" small @click="ticketHandler" v-on="on">
+          <v-icon size="16" color="orange">fas fa-ticket-alt</v-icon>
+        </v-btn>
+      </template>
+      <p class="text-body-2">send Ticket</p>
+    </v-tooltip>
     <v-tooltip light>
       <template #activator="{ on, attrs }">
         <v-btn text v-bind="attrs" small @click="editHandler" v-on="on">
@@ -72,6 +80,9 @@ export default {
     },
     printHandler() {
       this.$emit('clicked:print')
+    },
+    ticketHandler() {
+      this.$router.push('/admin/sendTicket')
     },
   },
 }

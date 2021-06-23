@@ -25,7 +25,6 @@
     "lottie-vuejs": "^0.4.0",
     "nuxt": "^2.15.3",
     "particles.js": "^2.0.0",
-    "vee-validate": "^4.4.2",
     "vue-chartjs": "^3.5.1"
   },
   "devDependencies": {
@@ -33,7 +32,7 @@
     "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "@nuxtjs/vuetify": "^1.11.3",
+    "@nuxtjs/vuetify": "^1.12.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",

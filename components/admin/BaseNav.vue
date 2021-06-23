@@ -1,5 +1,15 @@
 <template>
-  <v-app-bar color="transparent" absolute app dense class="pl-4" :elevation="0">
+  <v-app-bar
+    color="transparent"
+    fixed
+    app
+    dense
+    class="pl-4"
+    :class="{ 'collapse-width': scrollPassed }"
+    :elevation="0"
+    collapse
+    collapse-on-scroll
+  >
     <v-app-bar-nav-icon
       class="white--text"
       @click="toggleShowSidebar"
@@ -139,6 +149,7 @@ export default {
           text: 'settings',
         },
       ],
+      scrollPassed: false,
     }
   },
   fetch() {
@@ -175,6 +186,12 @@ export default {
       return this.$vuetify.breakpoint.mobile
     },
   },
+  mounted() {
+    window.addEventListener('scroll', this.scrollHandler)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.scrollHandler)
+  },
   methods: {
     searchHandler() {},
     toggleShowSidebar() {
@@ -183,7 +200,15 @@ export default {
     logoutHandler() {
       this.$router.replace('/')
     },
+    scrollHandler() {
+      if (window.scrollY > 20) this.scrollPassed = true
+      else this.scrollPassed = false
+    },
   },
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.collapse-width {
+  width: 7em !important;
+}
+</style>
