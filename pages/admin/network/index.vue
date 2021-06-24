@@ -1,5 +1,10 @@
 <template>
   <div>
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+    >
+      My Network
+    </h6>
     <v-card color="adminCardColor" class="pb-4 d-flex flex-column align-center">
       <v-card-title class="d-flex flex-column align-center">
         <v-img

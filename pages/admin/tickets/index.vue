@@ -1,122 +1,129 @@
 <template>
-  <v-card dark color="adminCardColor" class="pa-4 mt-4">
-    <v-data-table
-      :items="ticketItems"
-      :headers="ticketHeaders"
-      class="transparent mt-4"
-      :search="tableFilter"
-      :items-per-page="pageSize"
-      :hide-default-footer="true"
-      :page="page"
+  <div>
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
     >
-      <template #top>
-        <div
-          class="
-            topTable
-            d-flex
-            flex-column flex-md-row
-            justify-md-space-between
-          "
-        >
+      Tickets
+    </h6>
+    <v-card dark color="adminCardColor" class="pa-4 mt-4">
+      <v-data-table
+        :items="ticketItems"
+        :headers="ticketHeaders"
+        class="transparent mt-4"
+        :search="tableFilter"
+        :items-per-page="pageSize"
+        :hide-default-footer="true"
+        :page="page"
+      >
+        <template #top>
           <div
             class="
-              left
-              pageSizeSelect
+              topTable
               d-flex
               flex-column flex-md-row
-              align-md-center
+              justify-md-space-between
             "
           >
-            <v-select
-              v-model="pageSize"
-              :items="pages"
-              outlined
-              dense
-            ></v-select>
-            <v-text-field
-              v-model="tableFilter"
-              outlined
-              label="filter table rows"
-              dense
-              class="ml-0 ml-md-6"
-            ></v-text-field>
-          </div>
-
-          <div class="right btns mb-4 mb-md-0">
-            <v-btn
-              dark
-              color="teal accent-4"
-              class="pa-3 text-body-2"
-              @click="newTicketHandler"
-              >New Ticket</v-btn
+            <div
+              class="
+                left
+                pageSizeSelect
+                d-flex
+                flex-column flex-md-row
+                align-md-center
+              "
             >
+              <v-select
+                v-model="pageSize"
+                :items="pages"
+                outlined
+                dense
+              ></v-select>
+              <v-text-field
+                v-model="tableFilter"
+                outlined
+                label="filter table rows"
+                dense
+                class="ml-0 ml-md-6"
+              ></v-text-field>
+            </div>
+
+            <div class="right btns mb-4 mb-md-0">
+              <v-btn
+                dark
+                color="teal accent-4"
+                class="pa-3 text-body-2"
+                @click="newTicketHandler"
+                >New Ticket</v-btn
+              >
+            </div>
           </div>
-        </div>
-      </template>
-      <template #footer>
-        <div
-          class="
-            tableFooter
-            d-flex
-            flex-column flex-md-row
-            justify-md-space-between
-            align-md-center
-            mt-4
-          "
-        >
-          <p class="font-weight-light text-body-2 flex-shrink-0">
-            Showing
-            {{ startText }}
-            to
-            {{ endText }}
-            of {{ totalEntries }} entries
+        </template>
+        <template #footer>
+          <div
+            class="
+              tableFooter
+              d-flex
+              flex-column flex-md-row
+              justify-md-space-between
+              align-md-center
+              mt-4
+            "
+          >
+            <p class="font-weight-light text-body-2 flex-shrink-0">
+              Showing
+              {{ startText }}
+              to
+              {{ endText }}
+              of {{ totalEntries }} entries
+            </p>
+            <v-spacer></v-spacer>
+            <v-pagination
+              v-model="page"
+              class="mt-4 mt-md-0"
+              :length="totalPages"
+              :total-visible="5"
+            ></v-pagination>
+          </div>
+        </template>
+        <template #[`item.status`]="{ item }">
+          <p
+            v-if="item.status === 'seen'"
+            class="
+              text-caption
+              pa-1
+              text-center
+              rounded-lg
+              white--text
+              success
+              statusText
+            "
+          >
+            {{ item.status }}
           </p>
-          <v-spacer></v-spacer>
-          <v-pagination
-            v-model="page"
-            class="mt-4 mt-md-0"
-            :length="totalPages"
-            :total-visible="5"
-          ></v-pagination>
-        </div>
-      </template>
-      <template #[`item.status`]="{ item }">
-        <p
-          v-if="item.status === 'seen'"
-          class="
-            text-caption
-            pa-1
-            text-center
-            rounded-lg
-            white--text
-            success
-            statusText
-          "
-        >
-          {{ item.status }}
-        </p>
-        <p
-          v-else
-          class="
-            text-caption
-            pa-1
-            text-center
-            rounded-lg
-            white--text
-            error
-            statusText
-          "
-        >
-          {{ item.status }}
-        </p>
-      </template>
-      <template #item.subject="slotProps">
-        <nuxt-link :to="`/admin/tickets/${slotProps.item.id}`">{{
-          slotProps.value
-        }}</nuxt-link>
-      </template>
-    </v-data-table>
-  </v-card>
+          <p
+            v-else
+            class="
+              text-caption
+              pa-1
+              text-center
+              rounded-lg
+              white--text
+              error
+              statusText
+            "
+          >
+            {{ item.status }}
+          </p>
+        </template>
+        <template #item.subject="slotProps">
+          <nuxt-link :to="`/admin/tickets/${slotProps.item.id}`">{{
+            slotProps.value
+          }}</nuxt-link>
+        </template>
+      </v-data-table>
+    </v-card>
+  </div>
 </template>
 <script>
 export default {

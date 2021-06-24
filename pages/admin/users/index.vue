@@ -1,5 +1,10 @@
 <template>
   <div class="users-table">
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+    >
+      Users
+    </h6>
     <v-card color="adminCardColor" dark class="pa-4 mt-4">
       <v-data-table
         v-model="selectedUsers"

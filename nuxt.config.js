@@ -26,6 +26,7 @@ export default {
     { src: '~/plugins/globalComponents.js' },
     { src: '~/plugins/vuetify.js' },
     { src: '~/plugins/lottie.js' },
+    { src: '~/plugins/transitions.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

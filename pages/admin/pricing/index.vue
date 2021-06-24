@@ -1,5 +1,10 @@
 <template>
   <div>
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+    >
+      Pricing
+    </h6>
     <v-container>
       <v-row align="stretch">
         <v-col

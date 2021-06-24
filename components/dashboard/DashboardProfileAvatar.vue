@@ -1,8 +1,15 @@
 <template>
   <v-card color="secondary pa-0" dark>
     <v-card-title>
-      <v-avatar size="200" class="mx-auto borderAround">
+      <v-avatar size="200" class="mx-auto borderAround position-relative">
         <v-img width="100%" height="100%" :src="avatarImgSrc"></v-img>
+        <v-file-input
+          prepend-icon="fas fa-camera"
+          hide-input
+          dark
+          class="position-absolute absolute-bottom-center file-input"
+        >
+        </v-file-input>
       </v-avatar>
     </v-card-title>
     <v-card-text class="d-flex flex-column align-center pa-4">

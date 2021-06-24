@@ -1,7 +1,12 @@
 <template>
-  <v-card color="adminCardColor" class="rounded-lg pb-4" dark>
+  <v-card
+    color="adminCardColor"
+    class="rounded-lg pa-2 d-flex flex-column align-center"
+    dark
+  >
     <v-card-title
       class="
+        pa-0
         text-caption text-capitalize
         grey--text
         text--lighten-1
@@ -9,48 +14,55 @@
       "
       >{{ title }}</v-card-title
     >
-    <div class="d-flex justify-space-between mx-4">
+    <div
+      class="d-flex flex-column align-center mt-2"
+      :style="{ width: '100%' }"
+    >
       <v-progress-circular
         color="primary"
         :value="percentage"
         width="10"
-        size="70"
+        size="100"
         rotate="270"
       ></v-progress-circular>
-      <v-spacer></v-spacer>
-      <v-card-text class="pa-0 ml-2 d-flex flex-column capping-card-text">
+      <div
+        :style="{ width: '100%' }"
+        class="pa-0 d-flex flex-column align-center capping-card-text"
+      >
         <p class="text-h6 white--text font-weight-regular">{{ price }} USD</p>
         <p class="text-caption grey--text text--lighten-1">{{ subTitle }}</p>
-        <v-list color="transparent" class="mt-2">
-          <v-list-item
-            v-for="feature in features"
-            :key="feature.title"
-            class="capping-card-list-item"
-          >
-            <v-list-item-icon>
-              <v-icon size="4" color="cyan accent-2" class="my-2 list-icon"
-                >fas fa-circle</v-icon
-              >
-            </v-list-item-icon>
-            <v-list-item-content class="ml-n2 py-0">
-              <v-list-item-title
-                class="
-                  text-caption
-                  font-weight-light
-                  text-capitalize
-                  cyan--text
-                  text--accent-2
-                "
-                >{{ feature.title }} :
-                {{ feature.value }} USD</v-list-item-title
-              >
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-        <p class="mt-2 text-body-2 pink--text text--lighten-1">
-          Maximum Profit: {{ profit }}USD
-        </p>
-      </v-card-text>
+        <div class="d-flex justify-space-between mt-2">
+          <v-list color="transparent">
+            <v-list-item
+              v-for="feature in features"
+              :key="feature.title"
+              class="capping-card-list-item"
+            >
+              <v-list-item-icon>
+                <v-icon size="4" color="cyan accent-2" class="my-2 list-icon"
+                  >fas fa-circle</v-icon
+                >
+              </v-list-item-icon>
+              <v-list-item-content class="ml-n2 py-0">
+                <v-list-item-title
+                  class="
+                    text-caption
+                    font-weight-light
+                    text-capitalize
+                    cyan--text
+                    text--accent-2
+                  "
+                  >{{ feature.title }} :
+                  {{ feature.value }} USD</v-list-item-title
+                >
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+          <p class="text-body-2 pink--text text--lighten-1">
+            Maximum Profit: {{ profit }}USD
+          </p>
+        </div>
+      </div>
     </div>
   </v-card>
 </template>

@@ -1,5 +1,10 @@
 <template>
   <div>
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+    >
+      Dashboard
+    </h6>
     <v-container>
       <v-row>
         <v-col cols="12" sm="6" lg="4">
@@ -128,7 +133,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-form @submit.prevent="submitHandler"></v-form>
   </div>
 </template>
 <script>
@@ -303,3 +307,17 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.custom-fade-transition-enter,
+.custom-fade-transition-leave-to {
+  opacity: 0;
+}
+.custom-fade-transition-enter-active,
+.custom-fade-transition-leave-active {
+  transition: all 5s linear;
+}
+.custom-fade-transition-enter-to,
+.custom-fade-transition-leave {
+  opacity: 1;
+}
+</style>

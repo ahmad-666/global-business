@@ -1,127 +1,144 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="12" md="6" lg="4">
-        <v-card color="adminCardColor">
-          <v-card-text
-            class="d-flex flex-column align-center white--text font-weight-bold"
-          >
-            <p class="text-h6">This Month Invoices</p>
-            <p class="text-h6">${{ monthInvoices }}</p>
-            <p class="text-h6">Last Month Invoices</p>
-            <p class="text-h6">${{ lastMonthInvoices }}</p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="12" lg="8">
-        <v-card color="adminCardColor" class="pa-4">
-          <v-card-title
-            class="
-              pa-0
-              white--text
-              text-subtitle-1
-              font-weight-bold
-              text-capitalize
-            "
-            >Invoices</v-card-title
-          >
-          <v-data-table
-            :items="invoicesData"
-            :headers="invoicesHeaders"
-            :search="tableFilter"
-            :items-per-page="pageSize"
-            :hide-default-footer="true"
-            :page="page"
-            class="mt-4 transparent"
-            dark
-          >
-            <template #top>
-              <div
-                class="
-                  topTable
-                  d-flex
-                  flex-column flex-md-row
-                  justify-md-space-between
-                "
-              >
-                <div class="page-size-select">
-                  <v-select
-                    v-model="pageSize"
-                    :items="pages"
-                    outlined
-                    dense
-                  ></v-select>
-                </div>
+  <div>
+    <h6
+      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+    >
+      Invest History
+    </h6>
+    <v-container>
+      <v-row>
+        <v-col cols="12" md="6" lg="4">
+          <v-card color="adminCardColor">
+            <v-card-text
+              class="
+                d-flex
+                flex-column
+                align-center
+                white--text
+                font-weight-bold
+              "
+            >
+              <p class="text-h6">This Month Invoices</p>
+              <p class="text-h6">${{ monthInvoices }}</p>
+              <p class="text-h6">Last Month Invoices</p>
+              <p class="text-h6">${{ lastMonthInvoices }}</p>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12" lg="8">
+          <v-card color="adminCardColor" class="pa-4">
+            <v-card-title
+              class="
+                pa-0
+                white--text
+                text-subtitle-1
+                font-weight-bold
+                text-capitalize
+              "
+              >Invoices</v-card-title
+            >
+            <v-data-table
+              :items="invoicesData"
+              :headers="invoicesHeaders"
+              :search="tableFilter"
+              :items-per-page="pageSize"
+              :hide-default-footer="true"
+              :page="page"
+              class="mt-4 transparent"
+              dark
+            >
+              <template #top>
+                <div
+                  class="
+                    topTable
+                    d-flex
+                    flex-column flex-md-row
+                    justify-md-space-between
+                  "
+                >
+                  <div class="page-size-select">
+                    <v-select
+                      v-model="pageSize"
+                      :items="pages"
+                      outlined
+                      dense
+                    ></v-select>
+                  </div>
 
-                <div class="filter-input">
-                  <v-text-field
-                    v-model="tableFilter"
-                    outlined
-                    label="filter table rows"
-                    dense
-                  ></v-text-field>
+                  <div class="filter-input">
+                    <v-text-field
+                      v-model="tableFilter"
+                      outlined
+                      label="filter table rows"
+                      dense
+                    ></v-text-field>
+                  </div>
                 </div>
-              </div>
-            </template>
-            <template #footer>
-              <div
-                class="
-                  tableFooter
-                  d-flex
-                  flex-column flex-md-row
-                  justify-md-space-between
-                  align-md-center
-                  mt-4
-                "
-              >
-                <p class="font-weight-light text-body-2 flex-shrink-0">
-                  Showing
-                  {{ startText }}
-                  to
-                  {{ endText }}
-                  of {{ totalEntries }} entries
-                </p>
-                <v-spacer></v-spacer>
-                <v-pagination
-                  v-model="page"
-                  class="mt-4 mt-md-0"
-                  :length="totalPages"
-                  :total-visible="5"
-                ></v-pagination>
-              </div>
-            </template>
-            <template #item.user="slotProps">
-              <div class="my-2">
-                <p>{{ slotProps.value.split(' ')[0] }}</p>
-                <p>{{ slotProps.value.split(' ')[1] }}</p>
-              </div>
-            </template>
-            <template #item.status="slotProps">
-              <nuxt-link
-                v-if="slotProps.value === 'accepted'"
-                :to="`/admin/depositMessage/${slotProps.item.id}`"
-              >
-                <v-chip color="success" class="cursor-pointer">Accepted</v-chip>
-              </nuxt-link>
-              <nuxt-link
-                v-else-if="slotProps.value === 'rejected'"
-                :to="`/admin/depositMessage/${slotProps.item.id}`"
-              >
-                <v-chip color="error" class="cursor-pointer">Rejected</v-chip>
-              </nuxt-link>
+              </template>
+              <template #footer>
+                <div
+                  class="
+                    tableFooter
+                    d-flex
+                    flex-column flex-md-row
+                    justify-md-space-between
+                    align-md-center
+                    mt-4
+                  "
+                >
+                  <p class="font-weight-light text-body-2 flex-shrink-0">
+                    Showing
+                    {{ startText }}
+                    to
+                    {{ endText }}
+                    of {{ totalEntries }} entries
+                  </p>
+                  <v-spacer></v-spacer>
+                  <v-pagination
+                    v-model="page"
+                    class="mt-4 mt-md-0"
+                    :length="totalPages"
+                    :total-visible="5"
+                  ></v-pagination>
+                </div>
+              </template>
+              <template #item.user="slotProps">
+                <div class="my-2">
+                  <p>{{ slotProps.value.split(' ')[0] }}</p>
+                  <p>{{ slotProps.value.split(' ')[1] }}</p>
+                </div>
+              </template>
+              <template #item.status="slotProps">
+                <nuxt-link
+                  v-if="slotProps.value === 'accepted'"
+                  :to="`/admin/depositMessage/${slotProps.item.id}`"
+                >
+                  <v-chip color="success" class="cursor-pointer"
+                    >Accepted</v-chip
+                  >
+                </nuxt-link>
+                <nuxt-link
+                  v-else-if="slotProps.value === 'rejected'"
+                  :to="`/admin/depositMessage/${slotProps.item.id}`"
+                >
+                  <v-chip color="error" class="cursor-pointer">Rejected</v-chip>
+                </nuxt-link>
 
-              <nuxt-link
-                v-else
-                :to="`/admin/depositMessage/${slotProps.item.id}`"
-              >
-                <v-chip color="warning" class="cursor-pointer">Pending</v-chip>
-              </nuxt-link>
-            </template>
-          </v-data-table>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+                <nuxt-link
+                  v-else
+                  :to="`/admin/depositMessage/${slotProps.item.id}`"
+                >
+                  <v-chip color="warning" class="cursor-pointer"
+                    >Pending</v-chip
+                  >
+                </nuxt-link>
+              </template>
+            </v-data-table>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 <script>
 export default {
