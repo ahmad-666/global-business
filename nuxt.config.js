@@ -58,7 +58,8 @@ export default {
           dark: false,
           themes: {
             light: {
-              primary: '#d1a316',
+              // primary: '#d1a316',
+              primary: '#ffa500',
               secondary: '#24262d',
               error: '#DB524B',
               textColor: '#888',

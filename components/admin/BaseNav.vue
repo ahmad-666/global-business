@@ -4,11 +4,9 @@
     fixed
     app
     dense
-    class="pl-4"
+    class="pl-4 overflow-hidden"
     :class="{ 'collapse-width': scrollPassed }"
     :elevation="0"
-    collapse
-    collapse-on-scroll
   >
     <v-app-bar-nav-icon
       class="white--text"

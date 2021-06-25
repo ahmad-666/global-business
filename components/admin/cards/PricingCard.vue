@@ -2,10 +2,7 @@
   <v-tooltip dark color="grey darken-3" max-width="15em">
     <template #activator="{ on, attrs }">
       <v-card light color="white" class="pa-0" v-bind="attrs" v-on="on">
-        <v-card-title
-          class="pa-4 position-relative"
-          :style="{ backgroundImage: titleGradient }"
-        >
+        <v-card-title class="pa-4 position-relative">
           <div
             :style="{ zIndex: 3 }"
             class="width-100 d-flex flex-column align-center"
@@ -41,7 +38,9 @@
               </template>
             </v-dialog>
             <div class="d-flex align-center justify-center">
-              <p class="text-h4 white--text font-weight-medium">${{ price }}</p>
+              <p class="text-h4 grey--text text--darken-2 font-weight-medium">
+                ${{ price }}
+              </p>
               <p class="text-subtitle-1 grey--text text--lighten-1 mt-4">.00</p>
             </div>
             <div
@@ -61,24 +60,26 @@
               <p class="primary--text font-weight-bold text-h5">
                 {{ titleFirstSegment }}
               </p>
-              <p class="white--text font-weight-regular text-h6">
+              <p class="grey--text text--darken-2 font-weight-regular text-h6">
                 {{ titleSecondSegment }}
               </p>
             </div>
           </div>
           <v-img
-            class="position-absolute absolute-center"
-            max-width="8em"
+            class="position-absolute left-0 top-0"
+            width="75%"
             height="auto"
+            min-height="8em"
             :style="{ zIndex: 1 }"
             :src="titleImg"
           ></v-img>
+          <!-- 
           <v-overlay
             color="rgb(0,0,0)"
             :opacity="0.65"
             absolute
             :z-index="2"
-          ></v-overlay>
+          ></v-overlay> -->
         </v-card-title>
         <v-card-text class="py-0 px-4 mt-4">
           <v-list>

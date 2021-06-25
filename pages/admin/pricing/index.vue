@@ -36,6 +36,7 @@
 </template>
 <script>
 import PricingCard from '~/components/admin/cards/PricingCard.vue'
+
 export default {
   components: {
     PricingCard,
@@ -55,7 +56,7 @@ export default {
         title: 'moon package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/moon.png',
+        titleImg: '/imgs/cards/card-danger.png',
         month: 36,
         totalProfit: '180%',
         referralIncome: '0%',
@@ -73,7 +74,7 @@ export default {
         title: 'earth package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/earth.png',
+        titleImg: '/imgs/cards/card-primary.png',
         month: 36,
         totalProfit: '150%',
         referralIncome: '0%',
@@ -91,7 +92,7 @@ export default {
         title: 'sun package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/sun.png',
+        titleImg: '/imgs/cards/card-success.png',
         month: 48,
         totalProfit: '280%',
         referralIncome: '0%',
@@ -108,7 +109,7 @@ export default {
         title: 'star package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/moon.png',
+        titleImg: '/imgs/cards/card-warning.png',
         month: 48,
         totalProfit: '320%',
         referralIncome: '0%',

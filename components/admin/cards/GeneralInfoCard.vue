@@ -1,5 +1,5 @@
 <template>
-  <v-card color="adminCardColor" class="pa-4 rounded-lg">
+  <v-card color="adminCardColor" class="pa-4 rounded-lg fill-height">
     <v-card-text class="d-flex justify-space-between align-center pa-0">
       <div
         class="icon rounded-circle d-flex justify-center align-center"
@@ -24,10 +24,12 @@
     </v-card-text>
     <v-divider v-if="actionText" dark class="mt-6 mb-2"></v-divider>
     <v-card-actions v-if="actionText" class="pa-0">
-      <v-btn text class="d-flex align-center grey--text text-lighten-1">
-        <v-icon size="12">{{ actionIcon }}</v-icon>
-        <p class="ml-2 text-caption text-capitalize">{{ actionText }}</p>
-      </v-btn>
+      <p class="grey--text text-lighten-1 text-caption text-capitalize">
+        <v-icon size="12" class="mr-2" color="grey lighten-1">{{
+          actionIcon
+        }}</v-icon>
+        {{ actionText }}
+      </p>
     </v-card-actions>
   </v-card>
 </template>

@@ -7,7 +7,7 @@
     </h6>
     <v-container>
       <v-row>
-        <v-col cols="12" sm="6" lg="4">
+        <v-col cols="12" md="6">
           <capping-card
             :title="cappingCard.title"
             :percentage="cappingCard.percentage"
@@ -17,18 +17,7 @@
             :profit="cappingCard.profit"
           ></capping-card>
         </v-col>
-        <v-col cols="12" sm="6" lg="4">
-          <general-info-card
-            v-for="(infoCard, i) in infoCards"
-            :key="infoCard.id"
-            :title="infoCard.title"
-            :icon="infoCard.icon"
-            :value="infoCard.value"
-            :icon-gradient="infoCard.iconGradient"
-            :class="{ 'mt-4': i > 0 }"
-          ></general-info-card>
-        </v-col>
-        <v-col cols="12" sm="6" lg="4">
+        <v-col cols="12" md="6">
           <v-card color="adminCardColor">
             <v-card-title class="white--text text-subtitle-1"
               >Investments</v-card-title
@@ -49,6 +38,27 @@
       </v-row>
     </v-container>
     <v-container>
+      <v-row align="stretch">
+        <v-col
+          v-for="infoCard in infoCards"
+          :key="infoCard.id"
+          cols="12"
+          sm="6"
+          md="4"
+          lg="3"
+        >
+          <general-info-card
+            :title="infoCard.title"
+            :icon="infoCard.icon"
+            :value="infoCard.value"
+            :icon-gradient="infoCard.iconGradient"
+            :action-icon="infoCard.actionIcon"
+            :action-text="infoCard.actionText"
+          ></general-info-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
       <v-row>
         <v-col cols="12" lg="6">
           <v-card color="adminCardColor">
@@ -60,7 +70,7 @@
                 <v-btn color="primary" class="py-3 px-6" dark>All Users</v-btn>
               </nuxt-link>
             </v-card-title>
-            <v-card-text>
+            <v-card-text :style="{ height: '40em' }" class="overflow-y-auto">
               <v-data-table
                 dark
                 class="transparent"
@@ -93,7 +103,7 @@
                 >
               </nuxt-link>
             </v-card-title>
-            <v-card-text>
+            <v-card-text :style="{ height: '40em' }" class="overflow-y-auto">
               <v-data-table
                 dark
                 class="transparent"
@@ -239,24 +249,39 @@ export default {
     this.infoCards = [
       {
         id: 1,
-        icon: 'fas fa-chart-line',
+        icon: 'fas fa-money-check-alt',
         title: 'balance',
         value: '8.17$',
-        iconGradient: 'linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3)',
+        iconGradient: 'linear-gradient(to bottom left,#ff8d72,#ff6491,#ff8d72)',
+        actionIcon: 'fas fa-money-check-alt',
+        actionText: 'short description about this card',
       },
       {
         id: 2,
-        icon: 'fas fa-chart-line',
+        icon: 'fas fa-wallet',
         title: 'ib wallet',
         value: '124.74$',
-        iconGradient: 'linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3)',
+        iconGradient: 'linear-gradient(to bottom left,#e14eca,#ba54f5,#e14eca)',
+        actionIcon: 'fas fa-wallet',
+        actionText: 'short description about this card',
       },
       {
         id: 3,
-        icon: 'fas fa-chart-line',
+        icon: 'fas fa-wallet',
         title: 'roi wallet',
         value: '94.0$',
-        iconGradient: 'linear-gradient(to bottom left,#00f2c3,#0098f0,#00f2c3)',
+        iconGradient: 'linear-gradient(to bottom left,#1d8cf8,#3358f4,#1d8cf8)',
+        actionIcon: 'fas fa-wallet',
+        actionText: 'short description about this card',
+      },
+      {
+        id: 4,
+        icon: 'fas fa-users',
+        title: 'Users',
+        value: '94.0$',
+        iconGradient: 'linear-gradient(to bottom left,#fd5d93,#ec250d,#fd5d93)',
+        actionIcon: 'fas fa-users',
+        actionText: 'short description about this card',
       },
     ]
     // this.linkGenerator = {

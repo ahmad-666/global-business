@@ -27,12 +27,12 @@
       ></v-progress-circular>
       <div
         :style="{ width: '100%' }"
-        class="pa-0 d-flex flex-column align-center capping-card-text"
+        class="pa-0 d-flex flex-column align-center"
       >
         <p class="text-h6 white--text font-weight-regular">{{ price }} USD</p>
         <p class="text-caption grey--text text--lighten-1">{{ subTitle }}</p>
-        <div class="d-flex justify-space-between mt-2">
-          <v-list color="transparent">
+        <div class="d-flex justify-space-between mt-2 width-100">
+          <v-list color="transparent" class="pa-0">
             <v-list-item
               v-for="feature in features"
               :key="feature.title"
@@ -58,7 +58,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
-          <p class="text-body-2 pink--text text--lighten-1">
+          <p class="text-body-2 pink--text text--lighten-1 mt-2">
             Maximum Profit: {{ profit }}USD
           </p>
         </div>
