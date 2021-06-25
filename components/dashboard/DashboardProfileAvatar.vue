@@ -4,7 +4,7 @@
       <v-avatar size="200" class="mx-auto borderAround position-relative">
         <v-img width="100%" height="100%" :src="avatarImgSrc"></v-img>
         <v-file-input
-          prepend-icon="fas fa-camera"
+          prepend-icon="mdi-camera"
           hide-input
           class="position-absolute absolute-bottom-center file-input"
         >

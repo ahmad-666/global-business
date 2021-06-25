@@ -98,7 +98,12 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
+  loading: {
+    color: '#ffa500',
+    failedColor: 'crimson',
+    height: '5px',
+    rtl: false,
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

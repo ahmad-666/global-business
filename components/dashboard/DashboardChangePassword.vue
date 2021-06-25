@@ -7,7 +7,7 @@
       <v-list class="transparent" dense>
         <v-list-item v-for="step in steps" :key="step.id" class="mt-n2">
           <v-list-item-icon>
-            <v-icon size="12" color="textColor darken-1">fas fa-check</v-icon>
+            <v-icon size="15" color="textColor darken-1">mdi-check</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="d-flex align-center">

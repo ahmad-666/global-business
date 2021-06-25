@@ -82,7 +82,7 @@
         </p>
         <v-list-item v-for="rule in transferRules" :key="rule.id">
           <v-list-item-icon>
-            <v-icon size="10" color="primary">fas fa-check</v-icon>
+            <v-icon size="15" color="primary">mdi-check</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title
@@ -98,7 +98,7 @@
       <div class="d-flex flex-row-reverse pt-6">
         <v-btn type="submit" :loading="isLoading" dark color="primary">
           transfer
-          <v-icon class="ml-2" size="10">fas fa-chevron-right</v-icon>
+          <v-icon class="ml-2" size="15">mdi-chevron-right</v-icon>
         </v-btn>
       </div>
     </v-form>

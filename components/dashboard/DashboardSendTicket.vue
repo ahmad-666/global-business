@@ -6,14 +6,12 @@
       :rules="[formRules.required]"
       placeholder="Subject"
       :background-color="getBgColor"
-      dark
       outlined
       class="pa-2"
     ></v-text-field>
     <v-textarea
       v-model="desc"
       class="mt-0"
-      dark
       outlined
       dense
       :rules="[formRules.required]"

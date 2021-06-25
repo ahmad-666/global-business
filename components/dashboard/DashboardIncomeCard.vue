@@ -1,7 +1,6 @@
 <template>
   <v-card
-    dark
-    class="secondary pa-0 py-4"
+    class="cardColor pa-0 py-4"
     :class="{ redBorder: type === 'red', greenBorder: type === 'green' }"
   >
     <v-progress-circular
@@ -15,10 +14,10 @@
       <p class="text-h4 font-weight-bold">{{ progressValue }}%</p>
     </v-progress-circular>
     <v-card-title
-      class="d-flex justify-center align-center secondary lighten-1 pa-2 mt-4"
+      class="d-flex justify-center align-center primary white--text pa-2 mt-4"
     >
       <p class="font-weight-bold text-h3">{{ daysLeft }}</p>
-      <p class="text-body-2 grey--text text--darken-1 mt-6 ml-1">days left</p>
+      <p class="text-body-2 mt-6 ml-1">days left</p>
     </v-card-title>
     <v-list dense class="transparent">
       <v-list-item
@@ -27,17 +26,24 @@
         class="border-bottom-dark px-4"
       >
         <v-list-item-icon>
-          <v-icon size="15" color="primary">{{ feature.icon }}</v-icon>
+          <v-icon size="20" color="primary">{{ feature.icon }}</v-icon>
         </v-list-item-icon>
         <v-list-item-content>
-          <v-list-item-title class="text--white font-weight-light text-body-2"
+          <v-list-item-title
+            class="titleColor--text font-weight-light text-body-2"
             >{{ feature.title }}: {{ feature.text }}</v-list-item-title
           >
         </v-list-item-content>
       </v-list-item>
     </v-list>
     <v-card-text
-      class="py-2 px-4 text-center text-body-1 font-weight-light white--text"
+      class="
+        py-2
+        px-4
+        text-center text-body-1
+        font-weight-light
+        titleColor--text
+      "
     >
       Your Profit: {{ profit }} USD
     </v-card-text>
@@ -86,10 +92,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.redBorder {
-  border: 4px solid crimson !important;
-}
-.greenBorder {
-  border: 4px solid rgb(6, 162, 6) !important;
+.v-application {
+  .cardColor.redBorder {
+    border: 4px solid crimson !important;
+    border-color: crimson !important ;
+  }
+  .cardColor.greenBorder {
+    border: 4px solid rgb(6, 162, 6) !important;
+    border-color: rgb(6, 162, 6) !important ;
+  }
 }
 </style>

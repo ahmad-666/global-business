@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    dark
-    color="secondary card"
-    class="pa-4 d-flex flex-column align-center"
-  >
+  <v-card color="cardColor card" class="pa-4 d-flex flex-column align-center">
     <v-card-title
       class="
         primary
@@ -14,13 +10,14 @@
         text-body-2
         title
         d-block
+        white--text
       "
     >
       UserID: {{ userId }}
     </v-card-title>
     <p
       class="
-        secondary
+        cardColor
         darken-1
         font-weight-light
         text-body-2 text-center
@@ -42,7 +39,7 @@
       <div class="wing left d-flex flex-column align-start">
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2
@@ -54,7 +51,7 @@
         </p>
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2
@@ -67,7 +64,7 @@
         </p>
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2
@@ -82,7 +79,7 @@
       <div class="wing right ml-4 d-flex flex-column align-end">
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2
@@ -94,7 +91,7 @@
         </p>
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2
@@ -107,7 +104,7 @@
         </p>
         <p
           class="
-            secondary
+            cardColor
             darken-1
             font-weight-light
             text-body-2

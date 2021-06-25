@@ -73,7 +73,7 @@
       </p>
       <v-list-item v-for="swapRule in swapRules" :key="swapRule.id">
         <v-list-item-icon>
-          <v-icon size="10" color="primary">fas fa-check</v-icon>
+          <v-icon size="15" color="primary">mdi-check</v-icon>
         </v-list-item-icon>
         <v-list-item-content class="textColor--text text-body-2">
           <v-list-item-title>{{ swapRule.text }}</v-list-item-title>
@@ -91,7 +91,7 @@
         :loading="isLoading"
       >
         Swap it
-        <v-icon class="ml-2" size="10">fas fa-chevron-right</v-icon>
+        <v-icon class="ml-2" size="15">mdi-chevron-right</v-icon>
       </v-btn>
     </div>
   </v-form>

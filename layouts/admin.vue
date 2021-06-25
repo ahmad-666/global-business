@@ -12,7 +12,7 @@
       class="mt-2"
       :class="{
         moveLeft: showSidebar && !isMobile,
-        'ml-6': !isMobile,
+        'ml-15': !isMobile,
         'pl-15': !isMobile,
         'pr-4': !isMobile,
         'px-2': isMobile,
@@ -28,8 +28,8 @@
   </v-app>
 </template>
 <script>
-import BaseNav from '~/components/admin/BaseNav.vue'
-import BaseSidebar from '~/components/admin/BaseSidebar.vue'
+import BaseNav from '~/components/profile/BaseNav.vue'
+import BaseSidebar from '~/components/profile/BaseSidebar.vue'
 export default {
   components: {
     BaseNav,
@@ -48,6 +48,14 @@ export default {
       if (!this.$vuetify.theme.dark)
         return this.$vuetify.theme.themes.light.bgColor
       else return this.$vuetify.theme.themes.dark.bgColor
+    },
+    getUrl() {
+      return this.$route.fullPath
+    },
+  },
+  watch: {
+    getUrl() {
+      this.showSidebar = false
     },
   },
   methods: {

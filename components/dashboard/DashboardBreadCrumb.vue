@@ -1,9 +1,9 @@
 <template>
   <div class="breadcrumb d-flex align-center">
-    <nuxt-link to="/admin">
-      <v-icon color="primary" size="17">fas fa-home</v-icon>
+    <nuxt-link to="/profile">
+      <v-icon color="primary" size="22">mdi-home-outline</v-icon>
     </nuxt-link>
-    <v-icon class="ml-3 slash" size="12" color="textColor">fas fa-slash</v-icon>
+    <v-icon class="ml-3" size="16" color="textColor">mdi-slash-forward</v-icon>
     <v-breadcrumbs :items="items" class="pl-3"></v-breadcrumbs>
   </div>
 </template>
