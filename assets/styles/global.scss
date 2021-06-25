@@ -182,20 +182,20 @@ body .v-application p {
 .overflow-auto {
   overflow: auto !important;
 }
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 10px;
 }
-*::-webkit-scrollbar-thumb {
-  background-color: white;
+body::-webkit-scrollbar-thumb {
+  background-color: #ffa500;
   border-radius: 0px;
 }
-*::-webkit-scrollbar-track {
-  background-color: orange;
+body::-webkit-scrollbar-track {
+  background-color: transparent;
 }
-* {
+body {
   //just for firefox
   scrollbar-width: thin; //thin | auto
-  scrollbar-color: orange white; //first scrollbar , second track
+  scrollbar-color: #ffa500 transparent; //first scrollbar , second track
 }
 @media screen and (max-width: 1100px) {
   body {

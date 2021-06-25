@@ -1,12 +1,50 @@
 <template>
   <div>
+    <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
     <h6
-      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+      class="
+        text-h6
+        font-weight-medium
+        titleColor--text
+        text-capitalize
+        mt-2
+        mb-4
+      "
     >
       Dashboard
     </h6>
     <v-container>
       <v-row>
+        <v-col cols="12" md="6">
+          <v-card class="px-4" color="cardColor">
+            <v-card-title class="text-subtitle-1 font-weight-regular"
+              >Your Left Binary Link</v-card-title
+            >
+            <v-text-field
+              outlined
+              :value="leftLink"
+              dense
+              disabled
+            ></v-text-field>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="6">
+          <v-card class="px-4" color="cardColor">
+            <v-card-title class="text-subtitle-1 font-weight-regular"
+              >Your Right Binary Link</v-card-title
+            >
+            <v-text-field
+              outlined
+              :value="rightLink"
+              dense
+              disabled
+            ></v-text-field>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
+      <v-row align="stretch">
         <v-col cols="12" md="6">
           <capping-card
             :title="cappingCard.title"
@@ -18,22 +56,23 @@
           ></capping-card>
         </v-col>
         <v-col cols="12" md="6">
-          <v-card color="adminCardColor">
-            <v-card-title class="white--text text-subtitle-1"
-              >Investments</v-card-title
-            >
-            <v-card-text>
-              <line-chart
-                :gradient1="chartConfig.gradient1"
-                :gradient2="chartConfig.gradient2"
-                :labels="chartConfig.labels"
-                :datasets="chartConfig.datasets"
-                :y-min="chartConfig.yMin"
-                :y-max="chartConfig.yMax"
-                :show-legend="false"
-              ></line-chart>
-            </v-card-text>
-          </v-card>
+          <chart-card
+            title="investments"
+            sub-title="investments in past 6 months"
+            icon="mdi-chart-bell-curve-cumulative"
+            :value="investmentsValue"
+            color="primary"
+          >
+            <line-chart
+              :gradient1="chartConfig.gradient1"
+              :gradient2="chartConfig.gradient2"
+              :labels="chartConfig.labels"
+              :datasets="chartConfig.datasets"
+              :y-min="chartConfig.yMin"
+              :y-max="chartConfig.yMax"
+              :show-legend="false"
+            ></line-chart>
+          </chart-card>
         </v-col>
       </v-row>
     </v-container>
@@ -61,9 +100,9 @@
     <v-container>
       <v-row>
         <v-col cols="12" lg="6">
-          <v-card color="adminCardColor">
+          <v-card color="cardColor">
             <v-card-title class="d-flex align-center justify-space-between">
-              <p class="text-subtitle-1 white--text font-weight-medium">
+              <p class="text-subtitle-1 titleColor--text font-weight-medium">
                 Latest Users
               </p>
               <nuxt-link to="/admin/users">
@@ -72,14 +111,13 @@
             </v-card-title>
             <v-card-text :style="{ height: '40em' }" class="overflow-y-auto">
               <v-data-table
-                dark
                 class="transparent"
                 :items="usersData"
                 :headers="usersHeaders"
                 hide-default-footer
               >
                 <template #item.avatar="slotProps">
-                  <v-avatar size="50" class="my-2">
+                  <v-avatar size="35" class="my-2">
                     <v-img
                       :src="slotProps.value"
                       width="100%"
@@ -92,9 +130,9 @@
           </v-card>
         </v-col>
         <v-col cols="12" lg="6">
-          <v-card color="adminCardColor">
+          <v-card color="cardColor">
             <v-card-title class="d-flex align-center justify-space-between">
-              <p class="text-subtitle-1 white--text font-weight-medium">
+              <p class="text-subtitle-1 titleColor--text font-weight-medium">
                 Latest Invest History
               </p>
               <nuxt-link to="/admin/investHistory">
@@ -105,7 +143,6 @@
             </v-card-title>
             <v-card-text :style="{ height: '40em' }" class="overflow-y-auto">
               <v-data-table
-                dark
                 class="transparent"
                 :items="investHistoryData"
                 :headers="investHeaders"
@@ -143,28 +180,53 @@
         </v-col>
       </v-row>
     </v-container>
+    <div class="mt-4 d-flex">
+      <v-card color="cardColor" class="px-4 pb-4 flex-grow-1">
+        <v-card-title class="text-subtitle-1 titleColor--text"
+          >My Referral Statistics</v-card-title
+        >
+        <v-data-table
+          class="transparent"
+          :items="referralStatisticsItems"
+          :headers="referralStatisticsHeaders"
+          :hide-default-footer="true"
+        ></v-data-table>
+      </v-card>
+    </div>
   </div>
 </template>
 <script>
+import DashboardBreadCrumb from '~/components/dashboard/DashboardBreadCrumb.vue'
+
 import CappingCard from '~/components/admin/cards/CappingCard.vue'
 import GeneralInfoCard from '~/components/admin/cards/GeneralInfoCard.vue'
 // import LinkGeneratorCard from '~/components/admin/cards/L//inksGenerateCard.vue'
 import LineChart from '~/components/admin/charts/LineChart.vue'
-
+import ChartCard from '~/components/admin/charts/ChartCard.vue'
 export default {
   components: {
+    DashboardBreadCrumb,
     CappingCard,
     GeneralInfoCard,
     // LinkGeneratorCard,
     LineChart,
+    ChartCard,
   },
   layout: 'admin',
   data() {
     return {
+      breadcrumbItems: [
+        {
+          text: 'Dashboard',
+          disabled: false,
+          to: '/admin',
+        },
+      ],
       cappingCard: {},
       infoCards: [],
       // linkGenerator: {},
       investmentsData: [],
+      investmentsValue: 0,
       chartConfig: {},
       usersData: [], // only 10 last user
       usersHeaders: [
@@ -220,6 +282,35 @@ export default {
           align: 'start',
         },
       ],
+      referralStatisticsItems: [],
+      referralStatisticsHeaders: [
+        {
+          text: 'UserID',
+          value: 'id',
+          align: 'start',
+          sortable: false,
+        },
+        {
+          text: 'UserName',
+          value: 'name',
+          align: 'start',
+          sortable: false,
+        },
+        {
+          text: 'UserEmail',
+          value: 'email',
+          align: 'start',
+          sortable: false,
+        },
+        {
+          text: 'Status',
+          value: 'status',
+          align: 'start',
+          sortable: false,
+        },
+      ],
+      leftLink: '',
+      rightLink: '',
     }
   },
   fetch() {
@@ -278,7 +369,7 @@ export default {
         id: 4,
         icon: 'fas fa-users',
         title: 'Users',
-        value: '94.0$',
+        value: '15',
         iconGradient: 'linear-gradient(to bottom left,#fd5d93,#ec250d,#fd5d93)',
         actionIcon: 'fas fa-users',
         actionText: 'short description about this card',
@@ -292,6 +383,7 @@ export default {
     //   rightLink: 'http://globalbusiness724.com/page/signup?ref=rlwlvXSA',
     // }
     this.investmentsData = [80, 100, 70, 80, 110, 80]
+    this.investmentsValue = '1000$'
     this.chartConfig = {
       gradient1: `${this.$vuetify.theme.themes.light.primary}55`,
       gradient2: 'transparent',
@@ -329,20 +421,17 @@ export default {
           ? 'rejected'
           : 'pending'
     }
+    for (let i = 0; i < 10; i++) {
+      this.referralStatisticsItems[i] = {}
+      this.referralStatisticsItems[i].id = i
+      this.referralStatisticsItems[i].name = `name${i}`
+      this.referralStatisticsItems[i].email = 'something@gmail.com'
+      this.referralStatisticsItems[i].status = 'status value'
+    }
+
+    this.leftLink = 'http://forex-tg.proregister.html?ref=886L'
+    this.rightLink = 'http://forex-tg.proregister.html?ref=886R'
   },
 }
 </script>
-<style lang="scss" scoped>
-.custom-fade-transition-enter,
-.custom-fade-transition-leave-to {
-  opacity: 0;
-}
-.custom-fade-transition-enter-active,
-.custom-fade-transition-leave-active {
-  transition: all 5s linear;
-}
-.custom-fade-transition-enter-to,
-.custom-fade-transition-leave {
-  opacity: 1;
-}
-</style>
+<style lang="scss" scoped></style>

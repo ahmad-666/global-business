@@ -1,10 +1,20 @@
 <template>
   <div>
+    <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
+
     <h6
-      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
+      class="
+        text-h6
+        font-weight-medium
+        titleColor--text
+        text-capitalize
+        mt-2
+        mb-4
+      "
     >
       My Balance
     </h6>
+
     <v-container>
       <v-row>
         <v-col
@@ -37,6 +47,13 @@ export default {
   layout: 'admin',
   data() {
     return {
+      breadcrumbItems: [
+        {
+          text: 'Balance',
+          disabled: false,
+          to: '/admin/myBalance',
+        },
+      ],
       infoCards: [],
     }
   },
@@ -45,8 +62,8 @@ export default {
       {
         id: 1,
         icon: 'fas fa-dollar-sign',
-        title: 'number',
-        value: '150GB',
+        title: 'Balance',
+        value: '700$',
         iconGradient: 'linear-gradient(to bottom left,#ff8d72,#ff6491,#ff8d72)',
         actionIcon: 'fas fa-redo',
         actionText: 'update now',

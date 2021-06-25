@@ -2,8 +2,7 @@
   <v-form
     ref="myForm"
     v-model="isFormValid"
-    class="swapContainer pa-4 secondary"
-    dark
+    class="swapContainer pa-4 cardColor"
     @submit.prevent="submitHandler"
   >
     <div
@@ -16,7 +15,14 @@
       "
     >
       <div class="swapWallet flex-shrink-0">
-        <p class="text-capitalize grey--text text-subtitle-2 font-weight-bold">
+        <p
+          class="
+            text-capitalize
+            textColor--text
+            text-subtitle-2
+            font-weight-bold
+          "
+        >
           Swap from wallet:
         </p>
         <v-select
@@ -25,7 +31,6 @@
           :items="selectItems"
           outlined
           dense
-          dark
           return-object
         ></v-select>
       </div>
@@ -53,7 +58,6 @@
         </p>
         <v-text-field
           v-model="swapValue"
-          dark
           class="mt-3"
           type="number"
           outlined
@@ -62,19 +66,22 @@
         ></v-text-field>
       </div>
     </div>
-    <v-list dense class="section py-6 transparent" dark>
-      <p class="white--text font-weight-light text-body-2 text-capitalize">
+    <v-divider></v-divider>
+    <v-list dense class="section py-6 transparent">
+      <p class="titleColor--text font-weight-light text-body-2 text-capitalize">
         Swap Rules
       </p>
       <v-list-item v-for="swapRule in swapRules" :key="swapRule.id">
         <v-list-item-icon>
           <v-icon size="10" color="primary">fas fa-check</v-icon>
         </v-list-item-icon>
-        <v-list-item-content class="grey--text text--lighten-3 text-body-2">
+        <v-list-item-content class="textColor--text text-body-2">
           <v-list-item-title>{{ swapRule.text }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
+    <v-divider></v-divider>
+
     <div class="mt-6 d-flex flex-row-reverse">
       <v-btn
         type="submit"
@@ -159,7 +166,7 @@ export default {
 .valueSwap {
   width: 25em;
 }
-.section {
-  border-bottom: 1px solid darken(white, 75%) !important;
-}
+// .section {
+//   border-bottom: 1px solid darken(white, 75%) !important;
+// }
 </style>

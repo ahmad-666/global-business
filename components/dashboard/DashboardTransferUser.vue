@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-4" dark color="secondary">
+  <v-card class="pa-4" color="cardColor">
     <v-form ref="myForm" v-model="formIsValid" @submit.prevent="submitHandler">
       <div
         class="
@@ -7,6 +7,7 @@
           primary
           d-flex
           justify-space-around
+          white--text
           align-center
           py-1
           px-1 px-md-16
@@ -17,7 +18,7 @@
       </div>
       <div class="inputs mt-4 d-flex flex-column flex-md-row align-md-center">
         <div class="input">
-          <p class="font-weight-bold grey--text text--darken-1 text-body-2">
+          <p class="font-weight-bold textColor--text text-body-2">
             Transfer from wallet :
           </p>
           <v-select
@@ -25,26 +26,24 @@
             :items="transferOptions"
             class="mt-2"
             outlined
-            dark
             dense
           ></v-select>
         </div>
         <div class="input ml-0 mt-0 ml-md-5">
-          <p class="font-weight-bold grey--text text--darken-1 text-body-2">
+          <p class="font-weight-bold textColor--text text-body-2">
             Value of Transfer :
           </p>
           <v-text-field
             v-model="transferValue"
             class="mt-2"
             outlined
-            dark
             :rules="formRules.required"
             type="number"
             dense
           ></v-text-field>
         </div>
         <div class="input ml-0 mt-0 ml-md-5">
-          <p class="font-weight-bold grey--text text--darken-1 text-body-2">
+          <p class="font-weight-bold textColor--text text-body-2">
             Transfer to User: :
           </p>
           <div class="d-flex align-stretch">
@@ -53,7 +52,7 @@
                 ftgText
                 text--grey text-body-2
                 font-weight-light
-                secondary
+                accent
                 darken-1
                 outline
                 d-flex
@@ -61,6 +60,7 @@
                 align-center
                 py-0
                 px-4
+                white--text
               "
             >
               FTG
@@ -69,15 +69,17 @@
               v-model="transferToUser"
               class="mt-2 flex-grow-1"
               outlined
-              dark
               :rules="formRules.required"
               dense
             ></v-text-field>
           </div>
         </div>
       </div>
+      <v-divider></v-divider>
       <v-list class="py-6 transparent twoBorder">
-        <p class="text-body-1 font-weight-light white--text">Transfer Rules:</p>
+        <p class="text-body-1 font-weight-light titleColor--text">
+          Transfer Rules:
+        </p>
         <v-list-item v-for="rule in transferRules" :key="rule.id">
           <v-list-item-icon>
             <v-icon size="10" color="primary">fas fa-check</v-icon>
@@ -91,6 +93,8 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-divider></v-divider>
+
       <div class="d-flex flex-row-reverse pt-6">
         <v-btn type="submit" :loading="isLoading" dark color="primary">
           transfer
@@ -167,8 +171,8 @@ export default {
   height: 3em;
   margin-top: 0.5em;
 }
-.twoBorder {
-  border-top: 1px solid darken(white, 75%) !important;
-  border-bottom: 1px solid darken(white, 75%) !important;
-}
+// .twoBorder {
+//   border-top: 1px solid darken(white, 75%) !important;
+//   border-bottom: 1px solid darken(white, 75%) !important;
+// }
 </style>

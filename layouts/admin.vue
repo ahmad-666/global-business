@@ -19,10 +19,10 @@
       }"
     >
       <Nuxt />
-      <div class="d-flex align-center justify-end my-6">
-        <p class="text-caption white--text">@ {{ new Date().getFullYear() }}</p>
+      <div class="d-flex align-center justify-end my-6 textColor--text">
+        <p class="text-caption">@ {{ new Date().getFullYear() }}</p>
         <p class="text-caption primary--text ml-1">Global Business</p>
-        <p class="text-caption white--text ml-1">all rights reserved</p>
+        <p class="text-caption ml-1">all rights reserved</p>
       </div>
     </v-main>
   </v-app>
@@ -45,7 +45,9 @@ export default {
       return this.$vuetify.breakpoint.mobile
     },
     getBackgroundColor() {
-      return this.$vuetify.theme.themes.light.adminBackgroundColor
+      if (!this.$vuetify.theme.dark)
+        return this.$vuetify.theme.themes.light.bgColor
+      else return this.$vuetify.theme.themes.dark.bgColor
     },
   },
   methods: {

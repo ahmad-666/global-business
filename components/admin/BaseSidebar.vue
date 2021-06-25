@@ -129,12 +129,12 @@ export default {
               text: 'deposit',
               route: '/admin/deposit',
             },
+            // {
+            //   text: 'reinvest',
+            //   route: '/admin/pricing',
+            // },
             {
-              text: 'reinvest',
-              route: '/admin/reinvest',
-            },
-            {
-              text: 'pricing',
+              text: 'pricing & reinvest',
               route: '/admin/pricing',
             },
           ],
@@ -150,7 +150,7 @@ export default {
             },
             {
               text: 'transfer user to user',
-              route: '/admin/transfer/userToUser',
+              route: '/admin/userToUser',
             },
           ],
         },

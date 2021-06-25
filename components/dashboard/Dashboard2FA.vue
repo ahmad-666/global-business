@@ -1,6 +1,6 @@
 <template>
-  <v-card dark color="secondary" class="pa-4">
-    <v-card-title class="text-h6 font-weight-regular grey--text pa-0"
+  <v-card color="cardColor" class="pa-4">
+    <v-card-title class="text-h6 font-weight-regular titleColor--text pa-0"
       >Two-Factor Authentication
     </v-card-title>
     <v-form @submit.prevent="submitHandler">
@@ -17,17 +17,9 @@
         </p>
       </div>
       <div class="select d-flex align-center mt-4">
-        <p class="text-body-2 font-weight-bold grey--text text--darken-1">
-          Mode
-        </p>
+        <p class="text-body-2 font-weight-bold textColor--text">Mode</p>
         <div class="select ml-2">
-          <v-select
-            v-model="mode"
-            :items="modeItems"
-            dense
-            outlined
-            dark
-          ></v-select>
+          <v-select v-model="mode" :items="modeItems" dense outlined></v-select>
         </div>
       </div>
       <div class="d-flex flex-row-reverse">

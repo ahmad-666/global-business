@@ -1,7 +1,7 @@
 <template>
   <v-tooltip dark color="grey darken-3" max-width="15em">
     <template #activator="{ on, attrs }">
-      <v-card light color="white" class="pa-0" v-bind="attrs" v-on="on">
+      <v-card color="cardColor" class="pa-0" v-bind="attrs" v-on="on">
         <v-card-title class="pa-4 position-relative">
           <div
             :style="{ zIndex: 3 }"
@@ -38,10 +38,10 @@
               </template>
             </v-dialog>
             <div class="d-flex align-center justify-center">
-              <p class="text-h4 grey--text text--darken-2 font-weight-medium">
+              <p class="text-h4 titleColor--text font-weight-medium">
                 ${{ price }}
               </p>
-              <p class="text-subtitle-1 grey--text text--lighten-1 mt-4">.00</p>
+              <p class="text-subtitle-1 titleColor--text mt-4">.00</p>
             </div>
             <div
               class="
@@ -49,18 +49,18 @@
                 align-center
                 justify-center
                 text-caption
-                white--text
+                titleColor--text
               "
             >
               <p>to</p>
-              <p class="ml-1 primary--text">${{ maxPrice }}</p>
+              <p class="ml-1 titleColor--text">${{ maxPrice }}</p>
               <p class="ml-0">.00</p>
             </div>
             <div class="d-flex align-center mt-5 text-uppercase">
               <p class="primary--text font-weight-bold text-h5">
                 {{ titleFirstSegment }}
               </p>
-              <p class="grey--text text--darken-2 font-weight-regular text-h6">
+              <p class="titleColor--text font-weight-regular text-h6">
                 {{ titleSecondSegment }}
               </p>
             </div>
@@ -82,160 +82,83 @@
           ></v-overlay> -->
         </v-card-title>
         <v-card-text class="py-0 px-4 mt-4">
-          <v-list>
+          <v-list class="transparent">
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title
                   class="d-flex justify-center align-center text-subtitle-1"
                 >
                   <p class="font-weight-bold">{{ month }}</p>
-                  <p class="ml-1 grey--text text--darken-3 text-body-2">
-                    month
-                  </p>
+                  <p class="ml-1 titleColor--text text-body-2">month</p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="d-flex justify-center align-center">
-                  <p
-                    class="
-                      text-body-2
-                      font-weight-regular
-                      grey--text
-                      text--darken-2
-                    "
-                  >
+                  <p class="text-body-2 font-weight-regular textColor--text">
                     Total Profit:
                   </p>
-                  <p
-                    class="
-                      text-body-1
-                      font-weight-bold
-                      grey--text
-                      text--darken-3
-                      ml-2
-                    "
-                  >
+                  <p class="text-body-1 font-weight-bold titleColor--text ml-2">
                     {{ totalProfit }}
                   </p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="d-flex justify-center align-center">
-                  <p
-                    class="
-                      text-body-2
-                      font-weight-regular
-                      grey--text
-                      text--darken-2
-                    "
-                  >
+                  <p class="text-body-2 font-weight-regular textColor--text">
                     Referral Income:
                   </p>
-                  <p
-                    class="
-                      text-body-1
-                      font-weight-bold
-                      grey--text
-                      text--darken-3
-                      ml-2
-                    "
-                  >
+                  <p class="text-body-1 font-weight-bold titleColor--text ml-2">
                     {{ referralIncome }}
                   </p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="d-flex justify-center align-center">
-                  <p
-                    class="
-                      text-body-2
-                      font-weight-regular
-                      grey--text
-                      text--darken-2
-                    "
-                  >
+                  <p class="text-body-2 font-weight-regular textColor--text">
                     Binary Income:
                   </p>
-                  <p
-                    class="
-                      text-body-1
-                      font-weight-bold
-                      grey--text
-                      text--darken-3
-                      ml-2
-                    "
-                  >
+                  <p class="text-body-1 font-weight-bold titleColor--text ml-2">
                     {{ binaryIncome }}
                   </p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="d-flex justify-center align-center">
-                  <p
-                    class="
-                      text-body-2
-                      font-weight-regular
-                      grey--text
-                      text--darken-2
-                    "
-                  >
+                  <p class="text-body-2 font-weight-regular textColor--text">
                     Capping Monthly Limit:
                   </p>
-                  <p
-                    class="
-                      text-body-1
-                      font-weight-bold
-                      grey--text
-                      text--darken-3
-                      ml-2
-                    "
-                  >
+                  <p class="text-body-1 font-weight-bold titleColor--text ml-2">
                     {{ cappingMonthlyLimit }}
                   </p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="d-flex justify-center align-center">
-                  <p
-                    class="
-                      text-body-2
-                      font-weight-regular
-                      grey--text
-                      text--darken-2
-                    "
-                  >
+                  <p class="text-body-2 font-weight-regular textColor--text">
                     Avg Profit Month:
                   </p>
-                  <p
-                    class="
-                      text-body-1
-                      font-weight-bold
-                      grey--text
-                      text--darken-3
-                      ml-2
-                    "
-                  >
+                  <p class="text-body-1 font-weight-bold titleColor--text ml-2">
                     {{ avgProfitMonth }}
                   </p>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-divider light class="my-3"></v-divider>
+            <v-divider class="my-3"></v-divider>
           </v-list>
         </v-card-text>
         <v-card-actions class="pb-4">

@@ -1,5 +1,5 @@
 <template>
-  <v-card dark class="pa-0" color="secondary">
+  <v-card class="pa-0" color="cardColor">
     <v-card-title
       class="
         font-weight-bold
@@ -9,6 +9,7 @@
         d-flex
         justify-center
         align-center
+        white--text
       "
       >TRANSFERS HISTORY
     </v-card-title>
@@ -30,13 +31,15 @@
                 <p class="primary--text text-body-2 ml-0">
                   {{ item.senderId }}
                 </p>
-                <p class="white--text text-body-2 ml-1">Send</p>
-                <p class="primary--text text-body-2 ml-1">{{ item.value }}</p>
-                <p class="white--text text-body-2 ml-1">USD to User</p>
-                <p class="primary--text text-body-2 ml-1">
+                <p class="titleColor--text text-body-2 ml-1">Send</p>
+                <p class="textColor--text text-body-2 ml-1">{{ item.value }}</p>
+                <p class="titleColor--text text-body-2 ml-1">USD to User</p>
+                <p class="textColor--text text-body-2 ml-1">
                   {{ item.receiverId }}
                 </p>
-                <p class="white--text text-body-2 ml-1">From Main Wallet in</p>
+                <p class="titleColor--text text-body-2 ml-1">
+                  From Main Wallet in
+                </p>
               </div>
               <p class="date mt-2 font-weight-normal text-body-2">
                 {{ item.date }}

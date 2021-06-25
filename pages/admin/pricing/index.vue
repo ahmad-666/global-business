@@ -1,10 +1,7 @@
 <template>
   <div>
-    <h6
-      class="text-h6 font-weight-medium white--text text-capitalize mt-2 mb-4"
-    >
-      Pricing
-    </h6>
+    <dashboard-bread-crumb :items="breadcrumbItems"></dashboard-bread-crumb>
+    <h6 class="text-h6 titleColor--text font-weight-regular">Pricing</h6>
     <v-container>
       <v-row align="stretch">
         <v-col
@@ -44,6 +41,9 @@ export default {
   layout: 'admin',
   data() {
     return {
+      breadcrumbItems: [
+        { text: 'Pricing & Reinvest', disabled: false, to: '/admin/pricing' },
+      ],
       pricingCards: [],
     }
   },

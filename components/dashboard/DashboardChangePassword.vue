@@ -1,19 +1,17 @@
 <template>
-  <v-card class="secondary pa-4" dark>
-    <v-card-title class="mt-0 pa-0 font-weight-regular text-h6 grey--text"
+  <v-card class="cardColor pa-4">
+    <v-card-title class="mt-0 pa-0 font-weight-regular text-h6 titleColor--text"
       >Change Password</v-card-title
     >
     <v-form ref="myForm" v-model="isFormValid" @submit.prevent="submitHandler">
       <v-list class="transparent" dense>
         <v-list-item v-for="step in steps" :key="step.id" class="mt-n2">
           <v-list-item-icon>
-            <v-icon size="12" color="grey darken-1">fas fa-check</v-icon>
+            <v-icon size="12" color="textColor darken-1">fas fa-check</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title class="d-flex align-center">
-              <p
-                class="text-body-2 grey--text text--darken-1 font-weight-light"
-              >
+              <p class="text-body-2 textColor--text font-weight-light">
                 {{ step.title }} : {{ step.text }}
               </p>
               <v-btn
@@ -30,12 +28,11 @@
         </v-list-item>
       </v-list>
       <div class="input">
-        <p class="font-weight-bold text-body-2 grey--text text--darken-1">
+        <p class="font-weight-bold text-body-2 textColor--text">
           Security Code
         </p>
         <v-text-field
           v-model="securityCode"
-          dark
           outlined
           dense
           class="mt-2"
@@ -44,12 +41,11 @@
       </div>
       <div class="inputs d-flex flex-column flex-md-row align-md-center">
         <div class="input">
-          <p class="font-weight-bold text-body-2 grey--text text--darken-1">
+          <p class="font-weight-bold text-body-2 textColor--text">
             New Password
           </p>
           <v-text-field
             v-model="newPassword"
-            dark
             outlined
             dense
             class="mt-2"
@@ -57,12 +53,11 @@
           ></v-text-field>
         </div>
         <div class="input ml-0 ml-md-6">
-          <p class="font-weight-bold text-body-2 grey--text text--darken-1">
+          <p class="font-weight-bold text-body-2 textColor--text">
             Confirm Password
           </p>
           <v-text-field
             v-model="confirmNewPassword"
-            dark
             outlined
             dense
             class="mt-2"
@@ -70,7 +65,8 @@
           ></v-text-field>
         </div>
       </div>
-      <div class="d-flex flex-row-reverse border-top-dark py-5">
+      <v-divider></v-divider>
+      <div class="d-flex flex-row-reverse py-5">
         <v-btn
           type="submit"
           class="pa-3 text-body-2"

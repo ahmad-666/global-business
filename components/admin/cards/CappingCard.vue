@@ -1,15 +1,14 @@
 <template>
   <v-card
-    color="adminCardColor"
-    class="rounded-lg pa-2 d-flex flex-column align-center"
+    color="cardColor"
+    class="rounded-lg pa-2 d-flex flex-column align-center fill-height"
     dark
   >
     <v-card-title
       class="
         pa-0
         text-caption text-capitalize
-        grey--text
-        text--lighten-1
+        textColor--text
         font-weight-light
       "
       >{{ title }}</v-card-title
@@ -29,8 +28,10 @@
         :style="{ width: '100%' }"
         class="pa-0 d-flex flex-column align-center"
       >
-        <p class="text-h6 white--text font-weight-regular">{{ price }} USD</p>
-        <p class="text-caption grey--text text--lighten-1">{{ subTitle }}</p>
+        <p class="text-h6 titleColor--text font-weight-regular">
+          {{ price }} USD
+        </p>
+        <p class="text-caption textColor--text">{{ subTitle }}</p>
         <div class="d-flex justify-space-between mt-2 width-100">
           <v-list color="transparent" class="pa-0">
             <v-list-item
@@ -39,7 +40,7 @@
               class="capping-card-list-item"
             >
               <v-list-item-icon>
-                <v-icon size="4" color="cyan accent-2" class="my-2 list-icon"
+                <v-icon size="4" color="cyan accent-4" class="my-2 list-icon"
                   >fas fa-circle</v-icon
                 >
               </v-list-item-icon>
@@ -50,7 +51,7 @@
                     font-weight-light
                     text-capitalize
                     cyan--text
-                    text--accent-2
+                    text--accent-4
                   "
                   >{{ feature.title }} :
                   {{ feature.value }} USD</v-list-item-title

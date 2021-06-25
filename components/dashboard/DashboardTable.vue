@@ -1,5 +1,5 @@
 <template>
-  <v-card dark color="secondary" class="pa-4">
+  <v-card color="cardColor" class="pa-4">
     <v-data-table
       :items="items"
       :headers="headers"
