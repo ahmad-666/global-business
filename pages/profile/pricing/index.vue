@@ -226,7 +226,7 @@ export default {
         title: 'star package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/moon.png',
+        titleImg: '/imgs/science-earth-layers1.png',
         month: 48,
         totalProfit: '320%',
         referralIncome: '0%',
@@ -243,7 +243,7 @@ export default {
         title: 'star package',
         titleGradient:
           'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
-        titleImg: '/imgs/moon.png',
+        titleImg: '/imgs/Rocket-amico1.png',
         month: 48,
         totalProfit: '320%',
         referralIncome: '0%',
