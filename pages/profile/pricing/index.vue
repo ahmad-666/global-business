@@ -149,6 +149,23 @@ export default {
         tooltipText:
           'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
       },
+      {
+        id: 5,
+        price: 100000,
+        maxPrice: 500000,
+        title: 'star package',
+        titleGradient:
+          'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
+        titleImg: '/imgs/cards/nEW6.png',
+        month: 48,
+        totalProfit: '320%',
+        referralIncome: '0%',
+        binaryIncome: '10%',
+        cappingMonthlyLimit: '$0.00',
+        avgProfitMonth: '0%',
+        tooltipText:
+          'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+      },
     ]
     this.pricingCards2 = [
       {
@@ -204,6 +221,23 @@ export default {
       },
       {
         id: 4,
+        price: 100000,
+        maxPrice: 500000,
+        title: 'star package',
+        titleGradient:
+          'linear-gradient(to right, #6a9ce7, #6a9dea, #6a9eec, #6a9fef, #6aa0f2)',
+        titleImg: '/imgs/moon.png',
+        month: 48,
+        totalProfit: '320%',
+        referralIncome: '0%',
+        binaryIncome: '10%',
+        cappingMonthlyLimit: '$0.00',
+        avgProfitMonth: '0%',
+        tooltipText:
+          'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+      },
+      {
+        id: 5,
         price: 100000,
         maxPrice: 500000,
         title: 'star package',
