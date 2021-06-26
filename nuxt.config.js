@@ -24,7 +24,7 @@ export default {
   plugins: [
     { src: '~/plugins/fontawesome.js' },
     { src: '~/plugins/globalComponents.js' },
-    // { src: '~/plugins/vuetify.js' },
+    { src: '~/plugins/vuetify.js' },
     { src: '~/plugins/lottie.js' },
   ],
 
@@ -54,7 +54,8 @@ export default {
         treeShake: true,
         rtl: false,
         theme: {
-          dark: false,
+          dark: true,
+
           themes: {
             light: {
               primary: '#ffa500',

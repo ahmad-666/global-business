@@ -52,11 +52,33 @@ export default {
     getUrl() {
       return this.$route.fullPath
     },
+    isVuetifyDarkTheme() {
+      return this.$vuetify.theme.dark
+    },
+    vuexTheme() {
+      return this.$store.getters['theme/getTheme']
+    },
   },
   watch: {
     getUrl() {
       this.showSidebar = false
     },
+    isVuetifyDarkTheme(newVal) {
+      if (newVal) this.$store.dispatch('theme/setTheme', 'dark')
+      else this.$store.dispatch('theme/setTheme', 'light')
+    },
+    async vuexTheme(newVal) {
+      if (!newVal || newVal === 'dark') {
+        await this.$store.dispatch('theme/setTheme', 'dark')
+        this.$vuetify.theme.dark = true
+      } else {
+        await this.$store.dispatch('theme/setTheme', 'light')
+        this.$vuetify.theme.dark = false
+      }
+    },
+  },
+  mounted() {
+    this.$store.dispatch('theme/autoTheme') // get stored theme inside localStorage
   },
   methods: {
     toggleShowSidebar() {

@@ -123,12 +123,7 @@ export default {
           route: '/profile',
           icon: 'mdi-view-dashboard-outline',
         },
-        {
-          id: 2,
-          text: 'my profile',
-          route: '/profile/profile',
-          icon: 'mdi-account-circle-outline',
-        },
+
         {
           id: 3,
           text: 'investment',
@@ -227,11 +222,17 @@ export default {
           icon: 'mdi-account-network-outline',
           route: '/profile/network',
         },
+        // {
+        //   id: 9,
+        //   text: 'settings',
+        //   icon: 'mdi-cog-outline',
+        //   route: '/profile/settings',
+        // },
         {
-          id: 9,
-          text: 'settings',
-          icon: 'mdi-cog-outline',
-          route: '/profile/settings',
+          id: 2,
+          text: 'my profile',
+          route: '/profile/profile',
+          icon: 'mdi-account-circle-outline',
         },
         {
           id: 10,
