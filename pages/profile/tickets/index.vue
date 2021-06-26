@@ -50,7 +50,7 @@
               <v-btn
                 dark
                 color="teal accent-4"
-                class="pa-3 text-body-2"
+                class="pa-3 text-body-2 success-gradient"
                 @click="newTicketHandler"
                 >New Ticket</v-btn
               >
@@ -95,6 +95,7 @@
               white--text
               success
               statusText
+              success-gradient
             "
           >
             {{ item.status }}
@@ -109,6 +110,7 @@
               white--text
               error
               statusText
+              error-gradient
             "
           >
             {{ item.status }}

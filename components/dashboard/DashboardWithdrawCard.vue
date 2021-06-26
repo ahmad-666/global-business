@@ -57,7 +57,7 @@
           :loading="isLoading"
           color="primary"
           dark
-          class="py-3 py-md-6 px-6 px-md-15 text-subtitle-1"
+          class="py-3 py-md-6 px-6 px-md-15 text-subtitle-1 primary-gradient"
           type="submit"
           >SUBMIT</v-btn
         >

@@ -109,7 +109,9 @@
                   v-if="slotProps.value === 'accepted'"
                   :to="`/profile/depositMessage/${slotProps.item.id}`"
                 >
-                  <v-chip color="success" class="cursor-pointer"
+                  <v-chip
+                    color="success"
+                    class="cursor-pointer success-gradient"
                     >Accepted</v-chip
                   >
                 </nuxt-link>
@@ -117,14 +119,18 @@
                   v-else-if="slotProps.value === 'rejected'"
                   :to="`/profile/depositMessage/${slotProps.item.id}`"
                 >
-                  <v-chip color="error" class="cursor-pointer">Rejected</v-chip>
+                  <v-chip color="error" class="cursor-pointer error-gradient"
+                    >Rejected</v-chip
+                  >
                 </nuxt-link>
 
                 <nuxt-link
                   v-else
                   :to="`/profile/depositMessage/${slotProps.item.id}`"
                 >
-                  <v-chip color="warning" class="cursor-pointer"
+                  <v-chip
+                    color="warning"
+                    class="cursor-pointer warning-gradient"
                     >Pending</v-chip
                   >
                 </nuxt-link>

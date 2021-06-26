@@ -198,6 +198,71 @@ body {
   scrollbar-width: thin; //thin | auto
   scrollbar-color: #ffa500 transparent; //first scrollbar , second track
 }
+.v-application {
+  *.primary-gradient {
+    background-color: transparent !important;
+    background-image: linear-gradient(
+      to right bottom,
+      #ffa500,
+      #fca815,
+      #f8aa22,
+      #f5ad2d,
+      #f2af36
+    ) !important;
+  }
+}
+.v-application {
+  *.warning-gradient {
+    background-color: transparent !important;
+    background-image: linear-gradient(
+      to right bottom,
+      #ffa500,
+      #fca815,
+      #f8aa22,
+      #f5ad2d,
+      #f2af36
+    ) !important;
+  }
+}
+.v-application {
+  *.error-gradient {
+    background-color: transparent !important;
+    background-image: linear-gradient(
+      to right bottom,
+      #f44336,
+      #f14e41,
+      #ed574b,
+      #e96055,
+      #e4685e
+    ) !important;
+  }
+}
+.v-application {
+  *.success-gradient {
+    background-color: transparent !important;
+    background-image: linear-gradient(
+      to right bottom,
+      #079d89,
+      #15a591,
+      #1fad99,
+      #28b6a2,
+      #30beaa
+    ) !important;
+  }
+}
+.v-application {
+  .v-pagination .v-pagination__item--active {
+    background-color: transparent !important;
+    background-image: linear-gradient(
+      to right bottom,
+      #ffa500,
+      #fca815,
+      #f8aa22,
+      #f5ad2d,
+      #f2af36
+    ) !important;
+  }
+}
 @media screen and (max-width: 1100px) {
   body {
     font-size: 8px;

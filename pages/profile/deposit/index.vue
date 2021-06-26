@@ -47,7 +47,6 @@
                 mt-12
                 text-body-1
                 font-weight-regular
-                myBtn
                 d-flex
               "
               @click="depositHandler"
@@ -154,6 +153,7 @@
                   white--text
                   success
                   statusText
+                  success-gradient
                 "
               >
                 {{ item.status }}
@@ -168,6 +168,7 @@
                   white--text
                   error
                   statusText
+                  error-gradient
                 "
               >
                 {{ item.status }}
@@ -182,6 +183,7 @@
                   white--text
                   warning
                   statusText
+                  warning-gradient
                 "
               >
                 {{ item.status }}

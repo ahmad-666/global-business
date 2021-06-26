@@ -70,7 +70,7 @@
               color="primary"
               dark
               :loading="isLoading"
-              class="py-3 px-6"
+              class="py-3 px-6 primary-gradient"
               >Submit</v-btn
             >
           </v-form>

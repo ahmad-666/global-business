@@ -84,6 +84,27 @@
             :src="slotProps.value"
           ></v-img>
         </template>
+        <template #item.remainingDays="slotProps">
+          <p class="textColor--text">{{ slotProps.value }}</p>
+          <div
+            class="rounded-xl cardColor darken-1"
+            :style="{
+              width: '90px',
+              padding: '.25em',
+              ...getRangerParentStyle(parseFloat(slotProps.value)),
+            }"
+          >
+            <div
+              class="rounded-pill"
+              :class="getRangerClasses(parseFloat(slotProps.value))"
+              :style="{
+                'transform-origin': 'left center',
+                transform: `scaleX(${parseFloat(slotProps.value) / 100})`,
+                height: '.5em',
+              }"
+            ></div>
+          </div>
+        </template>
       </v-data-table>
     </v-card>
   </div>
@@ -141,6 +162,12 @@ export default {
           sortable: true,
           align: 'start',
         },
+        {
+          text: 'Remaining Days',
+          value: 'remainingDays',
+          sortable: false,
+          align: 'start',
+        },
       ],
     }
   },
@@ -153,6 +180,7 @@ export default {
       this.users[i].username = 'gb714580'
       this.users[i].email = 'something@gmail.com'
       this.users[i].regDate = new Date().toDateString()
+      this.users[i].remainingDays = `${Math.floor(Math.random() * 100)}%`
     }
   },
   computed: {
@@ -167,6 +195,32 @@ export default {
     },
     endText() {
       return (this.page - 1) * this.pageSize + this.pageSize
+    },
+  },
+  methods: {
+    getRangerClasses(val) {
+      if (val >= 50) {
+        return {
+          teal: true,
+          'accent-4': true,
+        }
+      } else {
+        return {
+          red: true,
+          'accent-3': true,
+        }
+      }
+    },
+    getRangerParentStyle(val) {
+      if (val >= 50) {
+        return {
+          'box-shadow': '0 0 .2em .1em teal',
+        }
+      } else {
+        return {
+          'box-shadow': '0 0 .2em .1em crimson',
+        }
+      }
     },
   },
 }

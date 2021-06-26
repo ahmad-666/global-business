@@ -106,7 +106,9 @@
                 Latest Users
               </p>
               <nuxt-link to="/profile/users">
-                <v-btn color="primary" class="py-3 px-6" dark>All Users</v-btn>
+                <v-btn color="primary primary-gradient" class="py-3 px-6" dark
+                  >All Users</v-btn
+                >
               </nuxt-link>
             </v-card-title>
             <v-card-text :style="{ height: '40em' }" class="overflow-y-auto">
@@ -129,10 +131,15 @@
                   <p class="textColor--text">{{ slotProps.value }}</p>
                   <div
                     class="rounded-xl cardColor darken-1"
-                    :style="{ padding: '.25em' }"
+                    :style="{
+                      width: '90px',
+                      padding: '.25em',
+                      ...getRangerParentStyle(parseFloat(slotProps.value)),
+                    }"
                   >
                     <div
-                      class="rounded-pill accent"
+                      class="rounded-pill"
+                      :class="getRangerClasses(parseFloat(slotProps.value))"
                       :style="{
                         'transform-origin': 'left center',
                         transform: `scaleX(${
@@ -154,7 +161,7 @@
                 Latest Invest History
               </p>
               <nuxt-link to="/profile/investHistory">
-                <v-btn color="primary" class="py-3 px-6" dark
+                <v-btn color="primary" class="py-3 px-6 primary-gradient" dark
                   >All Transactions</v-btn
                 >
               </nuxt-link>
@@ -179,19 +186,19 @@
                     <v-chip
                       v-if="slotProps.value === 'rejected'"
                       color="error"
-                      class="cursor-pointer"
+                      class="cursor-pointer error-gradient"
                       >rejected</v-chip
                     >
                     <v-chip
                       v-else-if="slotProps.value === 'accepted'"
                       color="success"
-                      class="cursor-pointer"
+                      class="cursor-pointer success-gradient"
                       >accepted</v-chip
                     >
                     <v-chip
                       v-else-if="slotProps.value === 'pending'"
                       color="warning"
-                      class="cursor-pointer"
+                      class="cursor-pointer warning-gradient"
                       >pending</v-chip
                     >
                   </nuxt-link>
@@ -460,6 +467,32 @@ export default {
 
     this.leftLink = 'http://forex-tg.proregister.html?ref=886L'
     this.rightLink = 'http://forex-tg.proregister.html?ref=886R'
+  },
+  methods: {
+    getRangerClasses(val) {
+      if (val >= 50) {
+        return {
+          teal: true,
+          'accent-4': true,
+        }
+      } else {
+        return {
+          red: true,
+          'accent-3': true,
+        }
+      }
+    },
+    getRangerParentStyle(val) {
+      if (val >= 50) {
+        return {
+          'box-shadow': '0 0 .2em .1em teal',
+        }
+      } else {
+        return {
+          'box-shadow': '0 0 .2em .1em crimson',
+        }
+      }
+    },
   },
 }
 </script>

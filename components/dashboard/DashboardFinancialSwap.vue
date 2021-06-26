@@ -87,7 +87,7 @@
         type="submit"
         color="primary"
         dark
-        class="pa-4"
+        class="pa-4 primary-gradient"
         :loading="isLoading"
       >
         Swap it

@@ -27,7 +27,7 @@
           dark
           color="primary"
           type="submit"
-          class="text-body-2 pa-3 mt-8 mt-lg-2"
+          class="text-body-2 pa-3 mt-8 mt-lg-2 primary-gradient"
           :loading="isLoading"
           >Save</v-btn
         >

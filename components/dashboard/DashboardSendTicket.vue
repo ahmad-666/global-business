@@ -40,7 +40,7 @@
         :loading="isLoading"
         color="primary"
         dark
-        class="pa-3 text-body-2"
+        class="pa-3 text-body-2 primary-gradient"
         type="submit"
         >Submit</v-btn
       >

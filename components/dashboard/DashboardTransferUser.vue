@@ -96,7 +96,13 @@
       <v-divider></v-divider>
 
       <div class="d-flex flex-row-reverse pt-6">
-        <v-btn type="submit" :loading="isLoading" dark color="primary">
+        <v-btn
+          type="submit"
+          :loading="isLoading"
+          dark
+          color="primary"
+          class="primary-gradient"
+        >
           transfer
           <v-icon class="ml-2" size="15">mdi-chevron-right</v-icon>
         </v-btn>

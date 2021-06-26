@@ -10,7 +10,7 @@
       :elevation="0"
     >
       <v-app-bar-nav-icon
-        class="primary--text"
+        class="primary--text ml-0 ml-md-1"
         @click="toggleShowSidebar"
       ></v-app-bar-nav-icon>
       <v-app-bar-title
@@ -219,6 +219,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .collapse-width {
-  width: 7em !important;
+  width: 10em !important;
 }
 </style>

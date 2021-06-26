@@ -23,7 +23,7 @@
     >
       <nuxt-link to="/profile" class="d-flex align-center my-2">
         <img src="/imgs/logo.png" alt="imgs/logo.png" class="logo" />
-        <p class="text-body-1 white--text ml-4">GLOBAL BUSINESS</p>
+        <p class="text-body-2 white--text ml-2">GLOBAL BUSINESS</p>
       </nuxt-link>
       <v-divider class="my-6"> </v-divider>
       <v-list class="mt-n6">
@@ -295,8 +295,8 @@ export default {
   height: calc(100% - 8em) !important;
 }
 .logo {
-  width: 5em;
-  height: 5em;
+  width: 50px;
+  height: 50px;
 }
 .activeClass {
   color: #455a64 !important;

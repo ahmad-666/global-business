@@ -17,7 +17,7 @@
               <v-btn
                 v-if="step.hasBtn"
                 color="primary"
-                class="ml-4 pa-3 text-body-2"
+                class="ml-4 pa-3 text-body-2 primary-gradient"
                 dark
                 type="button"
               >
@@ -69,7 +69,7 @@
       <div class="d-flex flex-row-reverse py-5">
         <v-btn
           type="submit"
-          class="pa-3 text-body-2"
+          class="pa-3 text-body-2 primary-gradient"
           dark
           color="primary"
           :loading="isLoading"
